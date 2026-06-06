@@ -5,7 +5,7 @@ export const personalInfo = {
   email: "sahasnagar1234@gmail.com",
   phone: "+91 90962 47010",
   location: "Pune, Maharashtra, India",
-  resumeUrl: "https://drive.google.com/file/d/1KjREXXaouJ2qb90KRGvnn9mHe3A1GFA-/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1yfBKGT92JNIr7ePD2Q9uIBfZWP3PkGnL/view?usp=sharing",
   profileImage: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZDEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojM2I4MmY2O3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4YjVjZjY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQxKSIgcng9IjE2MCIvPgogIDxjaXJjbGUgY3g9IjE2MCIgY3k9IjEyMCIgcj0iNTAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPgogIDxyZWN0IHg9IjExMCIgeT0iMTgwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxMCIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iMjgwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TYWhhcyBOYWdhcjwvdGV4dD4KPC9zdmc+",
   about: "Dedicated and curious Computer Engineering student with strong DSA background (915+ problems solved across platforms). Passionate about Backend Development, REST APIs, and ML.",
   languages: ["Python", "Java", "C++", "JavaScript"],

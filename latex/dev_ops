@@ -1,0 +1,167 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+\textbf{\Huge Sahas Prakash Nagar} \\[4pt]
+\small +91-9096247010 $|$
+\href{mailto:sahas.p.nagar@gmail.com}{sahas.p.nagar@gmail.com} $|$
+\href{https://www.linkedin.com/in/sahas-nagar/}{LinkedIn} $|$
+\href{https://github.com/Sahas2711}{GitHub} $|$
+\href{https://sahas2711.github.io/Portfolio/}{Portfolio} 
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+DevOps-focused engineer with experience in AWS, Docker, and CI/CD pipelines. Skilled in infrastructure automation using Python (Boto3), containerized deployments, and scalable cloud system design. CCNA-trained with Red Hat System Administration certification.
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {MIT Academy of Engineering, Pune}{2023 -- 2027}
+      {B.Tech. in Computer Engineering $|$ CGPA: 8.18 / 10}{}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {CISCO Virtual Internships Program}{May 2025 -- Aug. 2025}
+      {Network Engineering Virtual Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{Designed and simulated secure enterprise networks using Cisco Packet Tracer covering VLANs, OSPF, and subnetting.}
+        \resumeItem{Received structured mentorship from Cisco engineers; completed CCNA learning track with hands-on lab assessments.}
+      \resumeItemListEnd
+
+    % \resumeSubheading
+    %   {CISCO Virtual Internships Program}{May 2024 -- Jul. 2024}
+    %   {Cybersecurity Virtual Intern}{Remote}
+    %   \resumeItemListStart
+    %     \resumeItem{Completed Cybersecurity Essentials and Introduction to Networks; designed and evaluated secure network topologies.}
+    %     \resumeItem{Applied packet inspection techniques and network troubleshooting across simulated enterprise environments.}
+    %   \resumeItemListEnd
+
+    \resumeSubheading
+      {Campus Credentials}{Jun. 2025 -- Aug. 2025}
+      {Full Stack Development Intern (Cloud Deployment)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Deployed StayNest backend on Render cloud platform; managed environment configuration and service availability.}
+        \resumeItem{Integrated Git-based CI workflows to streamline releases and reduce deployment friction across a 4-member team.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Cloud Infrastructure Automation CLI} $|$ \emph{Python, Boto3, AWS}}{2025}
+\resumeItemListStart
+\resumeItem{Automated provisioning and management of AWS resources (EC2, S3, IAM, VPC) using Boto3.}
+\resumeItem{Reduced manual cloud configuration effort by \textbf{60\%} and cut provisioning time from \textbf{10 min to <3 min}.}
+\resumeItem{Designed modular architecture enabling \textbf{30\% faster feature extension} and maintainability.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{TaskSphere -- Microservices CI/CD System} $|$ \emph{Docker, Jenkins, Spring Boot}}{2025}
+\resumeItemListStart
+\resumeItem{Containerized microservices using Docker for consistent multi-environment deployments.}
+\resumeItem{Built Jenkins CI/CD pipeline reducing deployment effort by \textbf{70\%} and time from \textbf{15 min to <5 min}.}
+\resumeItem{Implemented service discovery and load balancing, reducing downtime by \textbf{40\%}.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{E-Commerce Cache Optimization} $|$ \emph{Redis, AWS RDS, Django}}{2025}
+\resumeItemListStart
+\resumeItem{Implemented Redis caching layer to optimize high-traffic endpoints and reduce DB load.}
+\resumeItem{Improved API response time by \textbf{50–65\%} and reduced DB queries by \textbf{40\%}.}
+\resumeItem{Integrated AWS RDS for scalable, managed database infrastructure.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+    
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\resumeItemListStart
+\resumeItem{Smart India Hackathon (SIH) 2025 -- Finalist}
+\resumeItem{Atos Srijan Hackathon 2025 -- Special Recognition}
+\resumeItem{Super 30 Scholar -- MIT Academy of Engineering}
+\resumeItemListEnd
+
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Cloud}{: Amazon EC2, S3, IAM, VPC, Athena, CloudFront} \\
+     \textbf{DevOps \& Automation}{: Docker, Boto3, n8n, Git, Maven, Linux (Red Hat), Shell Scripting} \\
+     \textbf{Networking \& Security}{: CCNA, Cisco Packet Tracer, Firewall Design, Packet Inspection, VLANs, OSPF, Subnetting} \\
+     \textbf{Languages}{: Python, Java, SQL, Bash} \\
+     \textbf{Concepts}{: CI/CD, Cloud Automation, Infrastructure Management, Network Security, MVC, REST APIs}
+    }}
+ \end{itemize}
+
+\end{document}

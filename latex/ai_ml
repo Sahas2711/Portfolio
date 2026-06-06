@@ -1,0 +1,171 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Sahas Prakash Nagar} \\ \vspace{1pt}
+    \small +91-9096247010 $|$
+    \href{mailto:sahas.p.nagar@gmail.com}{\underline{sahas.p.nagar@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/sahas-nagar/}{\underline{linkedin}} $|$
+    \href{https://github.com/Sahas2711}{\underline{Github}} $|$
+    \href{https://sahas2711.github.io/Portfolio/}{\underline{Portfolio}} 
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+AI/ML engineer with hands-on experience in NLP, aspect-based sentiment analysis, ML-driven recommendation systems, and document intelligence automation. Achieved Global Rank 127 in the Amazon ML Challenge 2025. SIH 2025 Finalist and Super 30 scholar at MITAOE. Solved 315+ DSA problems with active competitive programming participation.
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {MIT Academy of Engineering, Pune}{2023 -- 2027}
+      {B.Tech. in Computer Engineering $|$ CGPA: 8.18 / 10}{}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+  {RISE }{Jan. 2025 -- Mar. 2025}
+  {Machine Learning Intern (Email Spam Detection System)}{Remote}
+  \resumeItemListStart
+    \resumeItem{Built and deployed an email spam classification system using NLP pipelines with TF-IDF and Logistic Regression/Naive Bayes models.}
+    \resumeItem{Achieved 93\% classification accuracy on a 4.5GB dataset through text preprocessing, feature engineering, and model tuning.}
+    \resumeItem{Developed and deployed a live Streamlit application for real-time spam prediction: \href{https://spamshield-project.streamlit.app/}{SpamShield}}
+  \resumeItemListEnd
+    \resumeSubheading
+      {AICTE Eduskills}{Jul. 2025 -- Sep. 2025}
+      {Full Stack Web Developer Intern (AI-integrated Platform)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Integrated REST APIs enabling AI-augmented document processing features into a production Spring Boot application.}
+        \resumeItem{Optimized backend data pipelines supporting NLP feature extraction across 500+ user interactions.}
+      \resumeItemListEnd
+
+    % \resumeSubheading
+    %   {Microsoft AI Odyssey Challenge -- ICT Academy}{May 2024 -- Jun. 2024}
+    %   {AI Training Program Participant}{Remote}
+    %   \resumeItemListStart
+    %     \resumeItem{Completed Azure AI Fundamentals covering Document Intelligence, Vision, NLP, and Azure OpenAI Service (GPT).}
+    %     \resumeItem{Developed solutions using Azure Cognitive Services for document parsing and generative AI prompt engineering.}
+    %   \resumeItemListEnd
+
+    
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{DocuMitra -- AI Document Intelligence System} $|$ \emph{Python, n8n, NLP, OCR, React, MySQL}}{Aug. 2025 -- Oct. 2025}
+          \resumeItemListStart
+            \resumeItem{Led end-to-end automation pipeline integrating OCR, NLP preprocessing, and document classification across a 6-member team.}
+            \resumeItem{Built workflow orchestration in n8n, reducing manual document processing effort by 70\%.}
+            \resumeItem{Integrated React frontend with MySQL-backed automation engine for real-time document intelligence at scale.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{SentiNet -- Aspect-Based Sentiment Analysis} $|$ \emph{Python, NLP, ML, ABSA, Web Deployment}}{Academic Project}
+          \resumeItemListStart
+            \resumeItem{Designed an ABSA system for healthcare data to extract fine-grained sentiments across treatment quality and patient experience dimensions.}
+            \resumeItem{Applied NLP preprocessing pipelines and ML classifiers to clinical text and patient feedback corpora.}
+            \resumeItem{Deployed as a web application enabling real-time sentiment inference on unseen clinical inputs.}
+          \resumeItemListEnd
+
+      % \resumeProjectHeading
+      %     {\textbf{Crop Prediction and Recommendation} $|$ \emph{Python, Machine Learning, Scikit-learn}}{Jul. 2025 -- Nov. 2025}
+      %     \resumeItemListStart
+      %       \resumeItem{Designed an ML pipeline to recommend optimal crops based on soil composition and weather parameters.}
+      %       \resumeItem{Optimized model for prediction accuracy and built a modular architecture to support future REST API integration.}
+      %     \resumeItemListEnd
+
+      % \resumeProjectHeading
+      %     {\textbf{Club Recommendation System} $|$ \emph{Python, ML, Streamlit}}{Aug. 2024 -- Nov. 2024}
+      %     \resumeItemListStart
+      %       \resumeItem{Built a personalized recommendation engine to match first-year students with college clubs based on interest profiles.}
+      %       \resumeItem{Deployed on Streamlit with an interactive UI, driving measurable increases in student engagement and onboarding.}
+      %     \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\resumeItemListStart
+\resumeItem{Smart India Hackathon (SIH) 2025 -- Finalist}
+\resumeItem{Amazon ML Challenge -- Global Rank 127}
+\resumeItem{Atos Srijan Hackathon 2025 -- Special Recognition}
+\resumeItem{Super 30 Scholar -- MIT Academy of Engineering}
+\resumeItemListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, SQL, JavaScript} \\
+     \textbf{ML / AI}{: Scikit-learn, NLP, ABSA, OCR, Prompt Engineering, Azure OpenAI Service, Generative AI} \\
+     \textbf{Frameworks \& Tools}{: Streamlit, Django, n8n, Postman, Git, React} \\
+     \textbf{Cloud \& Data}{: Azure AI Services, MySQL, Pandas, NumPy} \\
+     \textbf{Concepts}{: Machine Learning, Sentiment Analysis, Automation Pipelines, OOP, REST API Integration}
+    }}
+ \end{itemize}
+
+\end{document}

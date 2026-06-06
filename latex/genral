@@ -1,0 +1,166 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+\textbf{\Huge Nagar Sahas Prakash} \\[4pt]
+\small +91-9096247010 $|$
+\href{mailto:sahasnagar1234@gmail.com}{sahasnagar1234@gmail.com} $|$
+\href{https://www.linkedin.com/in/sahas-nagar/}{LinkedIn} $|$
+\href{https://github.com/Sahas2711}{GitHub} $|$
+Pune, Maharashtra
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+Versatile software engineer with experience across full-stack development, machine learning, cloud infrastructure, and systems programming. Delivered production-grade applications end-to-end, from REST API design to ML pipelines and cloud automation. SIH 2025 Finalist, Amazon ML Challenge Global Rank 127, and Super 30 scholar at MITAOE.
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {MIT Academy of Engineering, Pune}{2023 -- 2027}
+      {B.Tech. in Computer Engineering $|$ CGPA: 8.18 / 10}{}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {AICTE Eduskills}{Jul. 2025 -- Sep. 2025}
+      {Full Stack Web Developer Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{Built a full-stack blog platform using Spring Boot, React, and MySQL, supporting 500+ concurrent user interactions.}
+        \resumeItem{Designed RESTful APIs for authentication, CRUD, and commenting; applied layered architecture for long-term scalability.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Campus Credentials}{Jun. 2025 -- Aug. 2025}
+      {Full Stack Development Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{Developed StayNest, a full-stack Hostel \& PG Booking system with user auth, search filters, and booking management.}
+        \resumeItem{Adopted Git-based team workflows and REST API contracts, enabling smooth collaboration across a 4-member team.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {CISCO Virtual Internships Program}{May 2024 -- Jul. 2024}
+      {Cybersecurity Virtual Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{Designed secure enterprise network topologies in Cisco Packet Tracer covering routing, VLANs, and security hardening.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{DocuMitra -- AI Document Intelligence} $|$ \emph{Python, n8n, OCR, NLP, React, MySQL}}{Aug. 2025 -- Oct. 2025}
+          \resumeItemListStart
+            \resumeItem{Led automation pipeline integrating OCR, NLP, and document preprocessing as part of a 6-member cross-functional team.}
+            \resumeItem{Orchestrated end-to-end workflows in n8n, reducing manual document effort by 70\% in production.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{StayNest -- Hostel Booking System} $|$ \emph{Spring Boot, React, MySQL, REST, Git}}{Jun. 2025 -- Jul. 2025}
+          \resumeItemListStart
+            \resumeItem{Architected scalable RESTful backend handling listings, bookings, room availability, and automated email notifications.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{AWS SDK Resource Manager (CLI Tool)} $|$ \emph{Python, Boto3, AWS EC2/VPC/IAM/S3}}{2025}
+          \resumeItemListStart
+            \resumeItem{Built a modular menu-driven CLI using Python and Boto3 to automate AWS resource provisioning and management.}
+            \resumeItem{Reduced manual cloud operations overhead through automated EC2, VPC, IAM, and S3 workflows.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{SentiNet -- Aspect-Based Sentiment Analysis} $|$ \emph{Python, NLP, ML, Web Deployment}}{Academic Project}
+          \resumeItemListStart
+            \resumeItem{Built an ABSA system for healthcare data using NLP preprocessing and ML classifiers on clinical feedback corpora.}
+            \resumeItem{Deployed as a live web application for real-time sentiment inference on unseen patient text.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\resumeItemListStart
+\resumeItem{Smart India Hackathon (SIH) 2025 -- Finalist}
+\resumeItem{Atos Srijan Hackathon 2025 -- Special Recognition}
+\resumeItem{Super 30 Scholar -- MIT Academy of Engineering}
+\resumeItemListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, SQL, JavaScript, HTML/CSS} \\
+     \textbf{Frameworks}{: Spring Boot, Spring MVC, React, Django, FastAPI, Streamlit} \\
+     \textbf{AI / ML}{: Scikit-learn, NLP, OCR, ABSA, Automation Pipelines (n8n)} \\
+     \textbf{Cloud \& DevOps}{: AWS (EC2, S3, IAM, VPC, Athena, CloudFront), Docker, Git, Maven, Linux} \\
+     \textbf{Databases}{: MySQL, Oracle} \\
+     \textbf{Concepts}{: REST API Design, OOP, MVC, SDLC, Microservices, Network Security, DSA (315+ problems)}
+    }}
+ \end{itemize}
+
+\end{document}

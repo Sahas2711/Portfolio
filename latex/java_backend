@@ -1,0 +1,111 @@
+
+%----------HEADER----------
+\begin{center}
+\textbf{\Huge Nagar Sahas Prakash} \\[4pt]
+\small +91-9096247010 $|$
+\href{mailto:sahas.p.nagar@gmail.com}{sahas.p.nagar@gmail.com} $|$
+\href{https://www.linkedin.com/in/sahas-nagar/}{LinkedIn} $|$
+\href{https://github.com/Sahas2711}{GitHub} $|$
+Pune, Maharashtra
+\end{center}
+
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+Full-stack developer with strong expertise in \textbf{Java, Spring Boot, and REST APIs}, experienced in building scalable web applications with real-world deployments. Proven ability to design layered architectures, optimize backend performance, and collaborate in team environments. SIH 2025 Finalist with a focus on production-ready systems.
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{MIT Academy of Engineering, Pune}{2023 -- 2027}
+{B.Tech in Computer Engineering (CGPA: 8.18 / 10)}{}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{AICTE Eduskills}{Jul 2025 -- Sep 2025}
+{Full Stack Developer Intern}{Remote}
+\resumeItemListStart
+\resumeItem{Built a full-stack blogging platform using Spring Boot, React, and MySQL handling 500+ user interactions.}
+\resumeItem{Developed REST APIs for authentication, CRUD operations, and commenting, improving response efficiency.}
+\resumeItem{Applied layered architecture and Spring best practices to enhance scalability and maintainability.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Campus Credentials}{Jun 2025 -- Aug 2025}
+{Full Stack Developer Intern}{Remote}
+\resumeItemListStart
+\resumeItem{Developed \textbf{StayNest}, a hostel/PG booking platform with complete backend and frontend integration.}
+\resumeItem{Implemented authentication, booking workflows, and advanced filtering using REST APIs.}
+\resumeItem{Collaborated in a 4-member team using Git workflows, reducing integration conflicts.}
+\resumeItemListEnd
+
+\resumeSubheading
+{ Eduskills Academy}{Oct 2024 -- Dec 2024}
+{Full Stack Intern}{Remote}
+\resumeItemListStart
+\resumeItem{Built a  E-Commerce platform with authentication and database integration.}
+\resumeItem{Designed relational schema and implemented end-to-end business logic.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{StayNest -- Hostel Booking System $|$ \emph{Spring Boot, React, MySQL}}{}
+\resumeItemListStart
+\resumeItem{Designed scalable REST APIs for listings, bookings, and availability management.}
+\resumeItem{Implemented role-based access control and JPA-based persistence layer.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Library Management System $|$ \emph{Spring Boot, JSP, JDBC, MySQL}}{}
+\resumeItemListStart
+\resumeItem{Developed MVC-based system for book tracking, issue/return workflows.}
+\resumeItem{Integrated authentication and deployed system for department-level usage.}
+\resumeItemListEnd
+
+% \resumeProjectHeading
+% {E-Commerce Backend System $|$ \emph{Spring Boot, JPA, REST API}}{}
+% \resumeItemListStart
+% \resumeItem{Built backend APIs for product, user, and order management.}
+% \resumeItem{Designed normalized database schema ensuring efficient data handling.}
+% \resumeItemListEnd
+
+\resumeProjectHeading
+{TaskSphere -- Microservices-Based Task Management System $|$ \emph{Spring Boot, Spring Cloud, Docker}}{}
+\resumeItemListStart
+\resumeItem{Designed and implemented a microservices architecture with separate services for user, task, and authentication modules.}
+\resumeItem{Developed REST-based inter-service communication and ensured loose coupling for scalability and maintainability.}
+\resumeItem{Integrated API Gateway for centralized routing and efficient request handling across services.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\resumeItemListStart
+\resumeItem{Smart India Hackathon (SIH) 2025 -- Finalist}
+\resumeItem{Atos Srijan Hackathon 2025 -- Special Recognition}
+\resumeItem{Super 30 Scholar -- MIT Academy of Engineering}
+\resumeItemListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\resumeItemListStart
+\resumeItem{\textbf{Languages:} Java, Python, SQL, JavaScript}
+\resumeItem{\textbf{Frameworks:} Spring Boot, Spring MVC, Spring Data JPA, React, Django, FastAPI}
+\resumeItem{\textbf{Databases:} MySQL, Oracle}
+\resumeItem{\textbf{Tools:} Git, Maven, Postman, Docker, AWS (EC2, S3), Linux}
+\resumeItem{\textbf{Core Concepts:} OOP, REST APIs, MVC, SDLC, JDBC}
+\resumeItemListEnd
+
+
