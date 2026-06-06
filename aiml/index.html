@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahas Nagar — AI/ML Engineer | Python, NLP, Amazon ML #127</title>
+  <meta name="description" content="Software engineer with practical AI/ML experience. Amazon ML Challenge Global Rank #127. SIH 2025 Finalist. Python, NLP, Spring Boot, cloud deployment.">
+  <meta name="keywords" content="Sahas Nagar, AI/ML Engineer, Python, Machine Learning, NLP, Amazon ML Challenge, SIH 2025, Software Engineer, Spring Boot">
+  <meta name="author" content="Sahas Nagar">
+  <link rel="canonical" href="https://sahas2711.github.io/aiml/">
+  <meta property="og:title" content="Sahas Nagar — AI/ML Engineer">
+  <meta property="og:description" content="Software engineer with practical AI/ML experience. Amazon ML #127. SIH 2025 Finalist. Python, NLP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sahas2711.github.io/aiml/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0a0b">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0b;
+      --bg-secondary: #121214;
+      --bg-tertiary: #1a1a1d;
+      --border: #2a2a2e;
+      --border-hover: #3a3a3e;
+      --text-primary: #f0f0f1;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #71717a;
+      --accent: #6366f1;
+      --accent-dim: #4f46e5;
+      --accent-bg: rgba(99,102,241,0.08);
+      --accent-border: rgba(99,102,241,0.2);
+      --green: #22c55e;
+      --green-bg: rgba(34,197,94,0.08);
+      --amber: #f59e0b;
+      --amber-bg: rgba(245,158,11,0.08);
+      --purple: #a855f7;
+      --purple-bg: rgba(168,85,247,0.08);
+      --purple-border: rgba(168,85,247,0.2);
+      --gradient: linear-gradient(135deg, #6366f1, #a855f7);
+      --gradient-2: linear-gradient(135deg, #6366f1, #22c55e);
+      --radius: 8px;
+      --radius-sm: 4px;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --max-width: 760px;
+    }
+    .light {
+      --bg-primary: #fff;
+      --bg-secondary: #fafafa;
+      --bg-tertiary: #f4f4f5;
+      --border: #e4e4e7;
+      --border-hover: #d4d4d8;
+      --text-primary: #18181b;
+      --text-secondary: #52525b;
+      --text-tertiary: #a1a1aa;
+      --accent: #4f46e5;
+      --accent-bg: rgba(79,70,229,0.06);
+      --accent-border: rgba(79,70,229,0.12);
+      --green-bg: rgba(34,197,94,0.06);
+      --amber-bg: rgba(245,158,11,0.06);
+      --purple-bg: rgba(168,85,247,0.06);
+      --purple-border: rgba(168,85,247,0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,11,0.85);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+    .light nav { background: rgba(255,255,255,0.85); }
+    .nav-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      height: 52px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-weight: 600; font-size: 14px; color: var(--text-primary); text-decoration: none; font-family: var(--font-mono); }
+    .nav-logo span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 12px; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links .theme-btn { background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 3px 8px; cursor: pointer; color: var(--text-secondary); font-size: 13px; transition: all 0.15s; line-height: 1; }
+    .nav-links .theme-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .nav-links .mobile-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 3px 7px; cursor: pointer; color: var(--text-secondary); font-size: 15px; }
+    .mobile-menu { display: none; padding: 10px 24px 14px; border-top: 1px solid var(--border); flex-direction: column; gap: 10px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text-secondary); text-decoration: none; font-size: 13px; font-weight: 500; }
+    .mobile-menu a:hover { color: var(--text-primary); }
+    main { max-width: var(--max-width); margin: 0 auto; padding: 72px 24px 32px; }
+    section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    .section-label { font-family: var(--font-mono); font-size: 11px; font-weight: 500; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+
+    /* Hero */
+    #hero { padding: 64px 0 36px; border-bottom: 1px solid var(--border); position: relative; }
+    #hero::before { content: ''; position: absolute; top: -80px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%); pointer-events: none; }
+    #hero::after { content: ''; position: absolute; bottom: -40px; left: -80px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(168,85,247,0.04) 0%, transparent 70%); pointer-events: none; }
+    .hero-grid { display: flex; gap: 32px; align-items: stretch; position: relative; }
+    .hero-left { flex: 1; min-width: 0; }
+    .hero-right { flex-shrink: 0; width: 220px; }
+    .hero-badge {
+      display: inline-block; font-family: var(--font-mono); font-size: 10px;
+      background: var(--gradient); color: white; padding: 3px 10px;
+      border-radius: var(--radius-sm); margin-bottom: 12px;
+    }
+    .hero-name { font-size: 32px; font-weight: 700; line-height: 1.15; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .hero-name .gradient { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 4px; font-weight: 400; }
+    .hero-tagline { font-size: 14px; color: var(--text-tertiary); line-height: 1.7; margin: 10px 0 16px; }
+    .hero-stats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+    .hero-stat { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: var(--radius-sm); font-size: 11px; font-family: var(--font-mono); background: var(--accent-bg); border: 1px solid var(--accent-border); color: var(--accent); }
+    .hero-stat strong { font-weight: 600; color: var(--text-primary); }
+    .hero-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px;
+      border-radius: var(--radius); font-size: 12px; font-weight: 500;
+      text-decoration: none; transition: all 0.15s;
+      border: 1px solid var(--border); color: var(--text-secondary); background: var(--bg-secondary);
+    }
+    .hero-links a:hover { border-color: var(--border-hover); color: var(--text-primary); background: var(--bg-tertiary); }
+    .hero-links a.primary { background: var(--gradient); color: white; border: none; }
+    .hero-links a.primary:hover { opacity: 0.9; }
+    .hero-links svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Skill Indicators Panel */
+    .skill-panel {
+      background: var(--bg-secondary); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .skill-panel h4 { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-tertiary); margin-bottom: 2px; }
+    .skill-row { display: flex; align-items: center; gap: 8px; }
+    .skill-row .bar-track { flex: 1; height: 4px; background: var(--bg-tertiary); border-radius: 2px; overflow: hidden; }
+    .skill-row .bar-fill { height: 100%; border-radius: 2px; background: var(--gradient); }
+    .skill-row .bar-label { font-size: 10px; color: var(--text-secondary); width: 85px; flex-shrink: 0; font-family: var(--font-mono); }
+    .skill-row .bar-pct { font-size: 10px; color: var(--text-tertiary); width: 28px; text-align: right; font-family: var(--font-mono); }
+
+    /* Why AI + SE */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .why-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .why-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .why-card h4 .icon { margin-right: 4px; }
+    .why-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+    .why-card.highlight { border-color: var(--purple-border); background: var(--purple-bg); }
+    .why-visual { margin-top: 14px; padding: 14px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
+    .why-visual svg { max-width: 100%; height: auto; }
+
+    /* Amazon ML Featured */
+    .featured-rank {
+      background: var(--bg-secondary); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+      display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start;
+    }
+    .featured-rank .rank-badge {
+      width: 100px; height: 100px; flex-shrink: 0;
+      background: var(--gradient); border-radius: var(--radius);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: white; font-family: var(--font-mono);
+    }
+    .featured-rank .rank-badge .rank-num { font-size: 32px; font-weight: 700; line-height: 1; }
+    .featured-rank .rank-badge .rank-label { font-size: 10px; opacity: 0.85; margin-top: 2px; }
+    .featured-rank .rank-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .featured-rank .rank-content p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+    .featured-rank .rank-details { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .featured-rank .rank-detail { padding: 6px 10px; background: var(--bg-tertiary); border-radius: var(--radius-sm); font-size: 11px; color: var(--text-secondary); }
+    .featured-rank .rank-detail strong { color: var(--text-primary); }
+
+    /* Timeline (experience) */
+    .timeline { position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; padding-left: 30px; padding-bottom: 24px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot { position: absolute; left: 3px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-primary); border: 2px solid var(--accent); }
+    .timeline-dot.current { background: var(--gradient); border-color: var(--accent); }
+    .timeline-dot.aiml { border-color: var(--purple); }
+    .timeline-dot.ml { border-color: #14b8a6; }
+    .timeline-dot.ml.current { background: #14b8a6; border-color: #14b8a6; }
+    .timeline-dot.project-spot { border-color: #f59e0b; }
+    .timeline-dot.project-spot.current { background: #f59e0b; border-color: #f59e0b; }
+    .tag.ml { background: rgba(20,184,166,0.1); border-color: rgba(20,184,166,0.25); color: #2dd4bf; }
+    .tag.nlp { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.25); color: #60a5fa; }
+    .tag.sponsored { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); color: #fbbf24; }
+    .accuracy-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 11px; font-weight: 600; }
+    .accuracy-badge.green { background: var(--green-bg); border: 1px solid rgba(34,197,94,0.2); color: var(--green); }
+    .accuracy-badge.amber { background: var(--amber-bg); border: 1px solid rgba(245,158,11,0.2); color: var(--amber); }
+    .timeline-header { margin-bottom: 4px; }
+    .timeline-company { font-size: 14px; font-weight: 600; }
+    .timeline-role { font-size: 12px; color: var(--text-secondary); }
+    .timeline-role .tag { display: inline-block; font-family: var(--font-mono); font-size: 9px; padding: 1px 6px; background: var(--purple-bg); border: 1px solid var(--purple-border); color: var(--purple); border-radius: var(--radius-sm); margin-left: 4px; vertical-align: middle; }
+    .timeline-date { font-family: var(--font-mono); font-size: 10px; color: var(--text-tertiary); }
+    .timeline-details { margin-top: 4px; }
+    .timeline-details li { font-size: 12px; color: var(--text-secondary); margin-bottom: 2px; list-style: none; padding-left: 0; }
+    .timeline-details li::before { content: '\2014 '; color: var(--text-tertiary); }
+
+    /* Projects */
+    .projects h3 { font-size: 18px; font-weight: 600; margin-bottom: 2px; }
+    .projects .subtitle { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
+    .project { margin-bottom: 20px; padding: 20px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); }
+    .project:last-child { margin-bottom: 0; }
+    .project-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .project-badge.flagship { background: var(--purple-bg); border: 1px solid var(--purple-border); color: var(--purple); }
+    .project-badge.major { background: var(--accent-bg); border: 1px solid var(--accent-border); color: var(--accent); }
+    .project-badge.supporting { background: var(--bg-tertiary); border: 1px solid var(--border); color: var(--text-tertiary); }
+    .project-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .project-links { display: flex; gap: 6px; flex-shrink: 0; }
+    .project-links a {
+      display: inline-flex; align-items: center; gap: 3px; padding: 3px 8px;
+      border-radius: var(--radius-sm); font-size: 11px; font-weight: 500;
+      text-decoration: none; border: 1px solid var(--border);
+      color: var(--text-secondary); transition: all 0.15s;
+    }
+    .project-links a:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .project-links svg { width: 12px; height: 12px; }
+    .project-problem { font-size: 12px; color: var(--text-tertiary); margin-bottom: 10px; padding: 8px 12px; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 2px solid var(--purple); line-height: 1.6; }
+    .project-block { margin-bottom: 10px; }
+    .project-block:last-child { margin-bottom: 0; }
+    .project-block-title { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--purple); margin-bottom: 4px; font-weight: 500; }
+    .project-block-content { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+    .project-block-content li { list-style: none; padding-left: 0; margin-bottom: 2px; }
+    .project-block-content li::before { content: '\2192 '; color: var(--accent); }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 10px; }
+    .project-tech span { padding: 2px 7px; border-radius: var(--radius-sm); font-size: 10px; font-family: var(--font-mono); background: var(--bg-tertiary); color: var(--text-tertiary); }
+    .project-outcome { margin-top: 10px; padding: 8px 12px; background: var(--green-bg); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-sm); font-size: 12px; color: var(--green); }
+    .project-outcome strong { font-weight: 600; }
+
+    /* ML Pipeline */
+    .pipeline { display: flex; flex-wrap: wrap; gap: 0; margin: 14px 0; }
+    .pipeline-step {
+      flex: 1; min-width: 100px; text-align: center;
+      padding: 14px 8px; background: var(--bg-secondary);
+      border: 1px solid var(--border); position: relative;
+    }
+    .pipeline-step:not(:last-child)::after {
+      content: '\2192'; position: absolute; right: -10px; top: 50%;
+      transform: translateY(-50%); color: var(--accent); font-size: 14px;
+      z-index: 1;
+    }
+    .pipeline-step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .pipeline-step:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+    .pipeline-step .step-icon { font-size: 20px; margin-bottom: 4px; }
+    .pipeline-step .step-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--text-primary); }
+    .pipeline-step .step-desc { font-size: 10px; color: var(--text-tertiary); margin-top: 2px; }
+    .pipeline-step.active { background: var(--purple-bg); border-color: var(--purple-border); }
+
+    /* AI Engineering Stack */
+    .stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stack-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+    .stack-card h4 { font-size: 12px; font-weight: 600; margin-bottom: 8px; font-family: var(--font-mono); color: var(--purple); }
+    .stack-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+    .stack-tag { padding: 2px 8px; border-radius: var(--radius-sm); font-size: 11px; font-weight: 500; background: var(--accent-bg); border: 1px solid var(--accent-border); color: var(--accent); }
+    .stack-tag.python { background: rgba(55,118,171,0.12); border-color: rgba(55,118,171,0.25); color: #6bb5ff; }
+    .stack-tag.java { background: rgba(237,116,0,0.1); border-color: rgba(237,116,0,0.2); color: #f89820; }
+    .stack-tag.ops { background: rgba(13,183,131,0.1); border-color: rgba(13,183,131,0.2); color: #0db783; }
+    .stack-tag.eng { background: var(--purple-bg); border-color: var(--purple-border); color: var(--purple); }
+
+    /* Achievements */
+    .achievement { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .achievement:last-child { border-bottom: none; }
+    .achievement-icon { flex-shrink: 0; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+    .achievement-content { flex: 1; }
+    .achievement-title { font-size: 13px; font-weight: 500; }
+    .achievement-desc { font-size: 12px; color: var(--text-secondary); margin-top: 1px; }
+
+    /* Education */
+    .edu-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+    .edu-item h3 { font-size: 14px; font-weight: 600; }
+    .edu-meta { font-size: 12px; color: var(--text-secondary); }
+    .edu-detail { display: inline-block; padding: 2px 8px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 11px; color: var(--accent); margin-top: 6px; margin-right: 4px; }
+    .edu-coursework { font-size: 12px; color: var(--text-secondary); margin-top: 6px; }
+    .edu-coursework .course-tag { display: inline-block; padding: 1px 7px; background: var(--bg-tertiary); border-radius: var(--radius-sm); font-size: 11px; margin: 2px 2px 0 0; }
+
+    /* Contact */
+    #contact { padding: 32px 0; }
+    .contact-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .contact-links a {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 500; color: var(--text-secondary);
+      text-decoration: none; padding: 4px 0;
+      border-bottom: 1px solid transparent; transition: all 0.15s;
+    }
+    .contact-links a:hover { color: var(--text-primary); border-bottom-color: var(--accent); }
+    .contact-links svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; font-size: 11px; color: var(--text-tertiary); border-top: 1px solid var(--border); }
+
+    /* Animations */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    .animate { animation: fadeUp 0.35s ease-out forwards; }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+
+    @media (max-width: 700px) {
+      .hero-grid { flex-direction: column; gap: 16px; }
+      .hero-right { width: 100%; }
+      .hero-name { font-size: 26px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .featured-rank { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      .featured-rank .rank-details { grid-template-columns: 1fr; }
+      .stack-grid { grid-template-columns: 1fr; }
+      .pipeline { flex-direction: column; }
+      .pipeline-step:not(:last-child)::after { content: '\2193'; right: 50%; top: auto; bottom: -14px; transform: none; }
+      main { padding: 64px 16px 24px; }
+      .nav-links a:not(.theme-btn) { display: none; }
+      .nav-links .mobile-toggle { display: block; }
+      section { padding: 28px 0; }
+      #hero { padding: 48px 0 24px; }
+      .project-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/aiml/" class="nav-logo"><span>~</span>/sahas</a>
+    <div class="nav-links">
+      <a href="#why">Why AI+SE</a>
+      <a href="#experience">Experience</a>
+      <a href="#amazon-ml">Amazon ML</a>
+      <a href="#projects">Projects</a>
+      <a href="#stack">Stack</a>
+      <button class="theme-btn" id="themeToggle">&#9790;</button>
+      <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why">Why AI+SE</a>
+    <a href="#experience">Experience</a>
+    <a href="#amazon-ml">Amazon ML</a>
+    <a href="#projects">Projects</a>
+    <a href="#stack">Stack</a>
+  </div>
+</nav>
+<main>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge">AI/ML Engineer</div>
+      <h1 class="hero-name">Building Intelligent Systems<br>with <span class="gradient">Software Engineering</span> Discipline</h1>
+      <p class="hero-subtitle">Sahas Nagar &middot; Python, NLP, Java, Cloud</p>
+      <p class="hero-tagline">Combining machine learning, backend engineering, and cloud deployment to build practical AI-powered applications. Amazon ML Challenge Global Rank #127. SIH 2025 Finalist building offline NLP for NTRO.</p>
+      <div class="hero-stats">
+        <span class="hero-stat"><strong>#127</strong> Amazon ML Challenge</span>
+        <span class="hero-stat"><strong>SIH 2025</strong> National Finalist</span>
+        <span class="hero-stat"><strong>AI</strong> Full Stack @ Glimora</span>
+        <span class="hero-stat"><strong>315+</strong> DSA Solved</span>
+      </div>
+      <div class="hero-links">
+        <a href="https://drive.google.com/file/d/1AoPmQkw7I-EyDdEucngC3wJ_vJOyz-yv/view?usp=drive_link" class="primary" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Resume
+        </a>
+        <a href="https://github.com/Sahas2711" target="_blank">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/sahas-nagar/" target="_blank">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn
+        </a>
+        <a href="mailto:sahas.p.nagar@gmail.com">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Email
+        </a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="skill-panel">
+        <h4>AI Engineering Focus</h4>
+        <div class="skill-row"><span class="bar-label">ML &amp; Python</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><span class="bar-pct">78%</span></div>
+        <div class="skill-row"><span class="bar-label">Data Processing</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="bar-pct">65%</span></div>
+        <div class="skill-row"><span class="bar-label">Cloud &amp; Deploy</span><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span class="bar-pct">72%</span></div>
+        <div class="skill-row"><span class="bar-label">Backend Eng</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div><span class="bar-pct">85%</span></div>
+        <div class="skill-row"><span class="bar-label">Problem Solving</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><span class="bar-pct">80%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY AI + SOFTWARE ENGINEERING ==================== -->
+<section id="why">
+  <div class="section-label">/why-ai-software-engineering</div>
+  <div class="why-grid">
+    <div class="why-card highlight">
+      <h4><span class="icon">&#129302;</span> Machine Learning</h4>
+      <p>Amazon ML Rank #127. Built offline NLP pipeline for multilingual processing with model quantization. Understanding of ML lifecycle from data to deployment.</p>
+    </div>
+    <div class="why-card">
+      <h4><span class="icon">&#128295;</span> Backend Engineering</h4>
+      <p>Spring Boot, REST APIs, microservices. Most AI projects fail because of poor engineering discipline. I bring solid software architecture alongside ML.</p>
+    </div>
+    <div class="why-card">
+      <h4><span class="icon">&#9729;&#65039;</span> Cloud &amp; Deployment</h4>
+      <p>Docker, AWS (EC2, S3), Railway, Render. Know how to containerize, deploy, and operate ML-powered applications in production environments.</p>
+    </div>
+    <div class="why-card">
+      <h4><span class="icon">&#128202;</span> Data &amp; Problem Solving</h4>
+      <p>315+ DSA problems solved. MySQL, data processing, feature engineering. Strong foundation in turning data into actionable solutions.</p>
+    </div>
+  </div>
+  <div class="why-visual">
+    <svg viewBox="0 0 680 80" xmlns="http://www.w3.org/2000/svg" style="max-width:660px">
+      <rect x="10" y="10" width="200" height="60" rx="6" fill="rgba(99,102,241,0.08)" stroke="#6366f1" stroke-width="1"/>
+      <text x="110" y="35" text-anchor="middle" fill="#818cf8" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600">ML/AI</text>
+      <text x="110" y="55" text-anchor="middle" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10">Models &amp; Pipelines</text>
+      <text x="260" y="45" text-anchor="middle" fill="#71717a" font-family="JetBrains Mono, monospace" font-size="18">+</text>
+      <rect x="300" y="10" width="200" height="60" rx="6" fill="rgba(168,85,247,0.08)" stroke="#a855f7" stroke-width="1"/>
+      <text x="400" y="35" text-anchor="middle" fill="#c084fc" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600">Engineering</text>
+      <text x="400" y="55" text-anchor="middle" fill="#a1a1aa" font-family="Inter, sans-serif" font-size="10">APIs, DBs, Cloud, Scale</text>
+      <text x="550" y="45" text-anchor="middle" fill="#71717a" font-family="JetBrains Mono, monospace" font-size="18">=</text>
+      <rect x="590" y="10" width="80" height="60" rx="6" fill="rgba(34,197,94,0.08)" stroke="#22c55e" stroke-width="1"/>
+      <text x="630" y="45" text-anchor="middle" fill="#4ade80" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600">Ship</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ==================== EXPERIENCE ==================== -->
+<section id="experience">
+  <div class="section-label">/experience</div>
+  <div class="timeline">
+    <!-- 1. GLIMORA INTERNATIONAL -->
+    <div class="timeline-item">
+      <div class="timeline-dot current aiml"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">Glimora International</div>
+        <div class="timeline-role">AI Engineer Intern <span class="tag" style="background:var(--purple-bg);border-color:var(--purple-border);color:var(--purple)">AI</span> <span class="tag" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.2);color:var(--green)">Docker</span></div>
+        <div class="timeline-date">Apr 2026 &ndash; Present &middot; Hybrid</div>
+      </div>
+      <ul class="timeline-details">
+        <li>Developing AI-powered document processing workflows integrating OCR, classification, and automation capabilities into production applications</li>
+        <li>Building and optimizing OCR pipelines for document intelligence, enabling automated data extraction from structured and unstructured documents</li>
+        <li>Implementing document classification components to route and process documents through AI-assisted workflows</li>
+        <li>Containerizing AI application components using Docker and contributing to deployment workflows supporting scalable AI features</li>
+      </ul>
+    </div>
+
+    <!-- 2. RISE - Machine Learning Intern -->
+    <div class="timeline-item">
+      <div class="timeline-dot current ml"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">RISE</div>
+        <div class="timeline-role">Machine Learning Intern <span class="tag ml">ML</span> <span class="tag nlp">NLP</span></div>
+        <div class="timeline-date">Jan 2025 &ndash; Mar 2025 &middot; Remote</div>
+      </div>
+      <div style="margin-bottom:6px;">
+        <span class="accuracy-badge green">&#9733; 93% Accuracy</span>
+        <span style="font-size:11px;color:var(--text-tertiary);margin-left:6px;">SpamShield &mdash; Email Spam Detection</span>
+      </div>
+      <ul class="timeline-details">
+        <li>Built end-to-end NLP pipeline using TF-IDF vectorization and text preprocessing for email spam classification</li>
+        <li>Applied Logistic Regression and Naive Bayes classification models, comparing performance across evaluation metrics</li>
+        <li>Performed feature engineering on email text data including stop-word removal, stemming, and n-gram analysis</li>
+        <li>Developed a Streamlit application for real-time spam detection, enabling interactive model inference</li>
+        <li>Achieved 93% classification accuracy through iterative model tuning and cross-validation</li>
+      </ul>
+    </div>
+
+    <!-- 3. SENTINET - Industry Sponsored Project -->
+    <div class="timeline-item">
+      <div class="timeline-dot current project-spot"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">SentiNet &mdash; Aspect Based Sentiment Analysis for Healthcare</div>
+        <div class="timeline-role">Industry Sponsored Project <span class="tag sponsored">Industry Sponsored</span> <span class="tag nlp">ABSA</span></div>
+        <div class="timeline-date">2025</div>
+      </div>
+      <div style="margin-bottom:6px;">
+        <span class="accuracy-badge amber">&#9733; 84% Accuracy</span>
+        <span style="font-size:11px;color:var(--text-tertiary);margin-left:6px;">Python &middot; NLP &middot; NLTK &middot; Scikit-Learn</span>
+      </div>
+      <ul class="timeline-details">
+        <li>Built aspect-based sentiment analysis (ABSA) pipeline for healthcare datasets, extracting fine-grained sentiments across treatment quality, facilities, and patient experience dimensions</li>
+        <li>Applied NLP preprocessing, feature engineering, and ML classification techniques to healthcare review data</li>
+        <li>Achieved 84% model accuracy and evaluated performance on unseen healthcare reviews</li>
+        <li>Developed complete experimentation pipeline on Kaggle for reproducibility and portfolio demonstration</li>
+      </ul>
+      <div style="margin-top:6px;">
+        <a href="https://www.kaggle.com/code/atharvshirishjadhav/sentinet" target="_blank" style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-family:var(--font-mono);color:var(--accent);text-decoration:none;border:1px solid var(--accent-border);padding:3px 8px;border-radius:var(--radius-sm);background:var(--accent-bg);">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="12" height="12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          View on Kaggle
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. AICTE EDUSKILLS -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">AICTE Eduskills</div>
+        <div class="timeline-role">AI-Augmented Application Development Intern <span class="tag" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2);color:#a78bfa">AI</span></div>
+        <div class="timeline-date">Jul 2025 &ndash; Sep 2025 &middot; Remote</div>
+      </div>
+      <ul class="timeline-details">
+        <li>Developed AI-assisted document processing features and NLP-based text extraction capabilities for production platform</li>
+        <li>Built backend data pipelines supporting 500+ user interactions with AI-integrated workflows</li>
+        <li>Contributed to integrating AI/ML services into production application architecture</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AMAZON ML CHALLENGE ==================== -->
+<section id="amazon-ml">
+  <div class="section-label">/featured-achievement</div>
+  <div class="featured-rank">
+    <div class="rank-badge">
+      <div class="rank-num">#127</div>
+      <div class="rank-label">Global Rank</div>
+    </div>
+    <div class="rank-content">
+      <h3>Amazon ML Challenge &mdash; Global Rank #127</h3>
+      <p>Competed against thousands of participants in Amazon's machine learning challenge. Demonstrated practical ML problem-solving, data analysis, and model evaluation under time constraints. This is a strong indicator of ML fundamentals applied to real-world-style problems.</p>
+      <div class="rank-details">
+        <div class="rank-detail"><strong>Scale:</strong> Thousands of global participants</div>
+        <div class="rank-detail"><strong>Rank:</strong> Top percentile globally (#127)</div>
+        <div class="rank-detail"><strong>Skills tested:</strong> ML fundamentals, data analysis, evaluation</div>
+        <div class="rank-detail"><strong>Relevance:</strong> Applied problem-solving under constraints</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECTS ==================== -->
+<section id="projects" class="projects">
+  <div class="section-label">/projects</div>
+
+  <!-- FLAGSHIP: SIH NTRO -->
+  <h3>Offline Multilingual Intelligence &mdash; SIH 2025 (NTRO)</h3>
+  <p class="subtitle">AI/ML pipeline &mdash; Python, NLP, Offline-First, Model Quantization</p>
+
+  <div class="project">
+    <div class="project-badge flagship">&#9733; AI/ML Flagship &mdash; National Finalist</div>
+    <div class="project-header">
+      <div class="project-links">
+        <a href="https://github.com/Sahas2711" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24" width="12" height="12"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-problem"><strong>Problem:</strong> NTRO (National Technical Research Organisation) needed fully offline Sinhala and Nepali language processing for air-gapped, high-security environments with zero internet dependency. No existing solution met these constraints.</div>
+
+    <div class="project-block">
+      <div class="project-block-title">Data &amp; ML Approach</div>
+      <div class="project-block-content">
+        <li><strong>Data:</strong> Multilingual text corpus for Sinhala and Nepali language processing in offline environments</li>
+        <li><strong>Model:</strong> Offline-first NLP pipeline with local model inference and bundled model artifacts</li>
+        <li><strong>Optimization:</strong> Model quantization reduced memory footprint by 60% for constrained/air-gapped hardware</li>
+        <li><strong>Deployment:</strong> Fully self-contained system with zero external API calls &mdash; designed for high-security environments</li>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <div class="project-block-title">Why This Matters for AI/ML</div>
+      <div class="project-block-content">
+        <li><strong>Real ML pipeline:</strong> Data collection &rarr; preprocessing &rarr; model selection &rarr; optimization &rarr; deployment &rarr; evaluation</li>
+        <li><strong>Constraint-driven engineering:</strong> Offline requirement forced model quantization and optimized inference &mdash; not just running an API</li>
+        <li><strong>National-level validation:</strong> Selected as SIH 2025 Finalist. Demonstrated prototype to NTRO evaluators.</li>
+      </div>
+    </div>
+
+    <div class="project-tech"><span>Python</span><span>NLP</span><span>Offline-First</span><span>Model Quantization</span><span>Multilingual</span></div>
+    <div class="project-outcome"><strong>Outcome:</strong> SIH 2025 National Finalist &mdash; functional prototype with offline translation and analysis capability for Sinhala and Nepali. Demonstrated understanding of full ML lifecycle.</div>
+  </div>
+
+  <!-- ML Pipeline Visual -->
+  <h3 style="margin-top:4px;">ML Pipeline Understanding</h3>
+  <p class="subtitle">End-to-end lifecycle applied in the SIH NTRO project</p>
+  <div class="pipeline">
+    <div class="pipeline-step active"><div class="step-icon">&#128200;</div><div class="step-label">Data</div><div class="step-desc">Collection &amp; Prep</div></div>
+    <div class="pipeline-step"><div class="step-icon">&#9889;</div><div class="step-label">Process</div><div class="step-desc">Cleaning &amp; Normalize</div></div>
+    <div class="pipeline-step"><div class="step-icon">&#128300;</div><div class="step-label">Features</div><div class="step-desc">Engineering</div></div>
+    <div class="pipeline-step"><div class="step-icon">&#129302;</div><div class="step-label">Model</div><div class="step-desc">Train &amp; Tune</div></div>
+    <div class="pipeline-step"><div class="step-icon">&#9989;</div><div class="step-label">Evaluate</div><div class="step-desc">Validate &amp; Quantize</div></div>
+    <div class="pipeline-step"><div class="step-icon">&#9729;&#65039;</div><div class="step-label">Deploy</div><div class="step-desc">Offline Inference</div></div>
+  </div>
+
+  <!-- Engineering Foundation (non-AI projects) -->
+  <h3 style="margin-top:24px;">Software Engineering Foundation</h3>
+  <p class="subtitle">Backend and systems projects demonstrating engineering discipline</p>
+
+  <div class="project">
+    <div class="project-badge major">Engineering Foundation</div>
+    <div class="project-header">
+      <div class="project-name" style="font-weight:600;font-size:14px">TaskSphere &mdash; Microservices Architecture</div>
+      <div class="project-links">
+        <a href="https://task-sphere-d.vercel.app/" target="_blank"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="12" height="12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> Demo</a>
+        <a href="https://github.com/Sahas2711/TaskSphere_d" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24" width="12" height="12"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Source</a>
+      </div>
+    </div>
+    <div class="project-problem"><strong>Role:</strong> 3-service microsystems with Spring Cloud Gateway, Feign clients, per-service databases, Docker Compose. Demonstrates distributed systems thinking &mdash; essential for scaling ML systems.</div>
+    <div class="project-tech"><span>Spring Boot 3</span><span>Spring Cloud</span><span>Docker</span><span>MySQL</span><span>JWT</span></div>
+    <div class="project-outcome"><strong>Engineering value:</strong> Production-deployed microservices with API gateway, service isolation, and container orchestration &mdash; patterns directly applicable to MLOps infrastructure.</div>
+  </div>
+
+  <div class="project">
+    <div class="project-badge major">Engineering Foundation</div>
+    <div class="project-header">
+      <div class="project-name" style="font-weight:600;font-size:14px">AWS SDK Automation CLI</div>
+      <div class="project-links">
+        <a href="https://github.com/Sahas2711/AWS-SDK_Automation" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24" width="12" height="12"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Source</a>
+      </div>
+    </div>
+    <div class="project-problem"><strong>Problem:</strong> Manual cloud resource provisioning is slow and error-prone. Built Python CLI tool automating EC2, S3, IAM, and VPC setup using Boto3.</div>
+    <div class="project-tech"><span>Python</span><span>Boto3</span><span>AWS (EC2, S3, IAM, VPC)</span></div>
+    <div class="project-outcome"><strong>Engineering value:</strong> Infrastructure-as-code thinking. Python automation for cloud operations &mdash; directly applicable to MLOps data/ML pipeline infrastructure.</div>
+  </div>
+</section>
+
+<!-- ==================== AI ENGINEERING STACK ==================== -->
+<section id="stack">
+  <div class="section-label">/ai-engineering-stack</div>
+  <div class="stack-grid">
+    <div class="stack-card">
+      <h4>Machine Learning</h4>
+      <div class="stack-tags">
+        <span class="stack-tag python">Python</span>
+        <span class="stack-tag">NLP</span>
+        <span class="stack-tag">Model Quantization</span>
+        <span class="stack-tag">Offline Inference</span>
+        <span class="stack-tag">Data Analysis</span>
+      </div>
+    </div>
+    <div class="stack-card">
+      <h4>Data Processing</h4>
+      <div class="stack-tags">
+        <span class="stack-tag python">Python</span>
+        <span class="stack-tag">Data Cleaning</span>
+        <span class="stack-tag">Feature Engineering</span>
+        <span class="stack-tag">Exploratory Analysis</span>
+        <span class="stack-tag">SQL</span>
+      </div>
+    </div>
+    <div class="stack-card">
+      <h4>Deployment &amp; Cloud</h4>
+      <div class="stack-tags">
+        <span class="stack-tag ops">Docker</span>
+        <span class="stack-tag ops">AWS (EC2, S3)</span>
+        <span class="stack-tag ops">Railway</span>
+        <span class="stack-tag">REST APIs</span>
+        <span class="stack-tag ops">Git</span>
+      </div>
+    </div>
+    <div class="stack-card">
+      <h4>Software Engineering</h4>
+      <div class="stack-tags">
+        <span class="stack-tag java">Java</span>
+        <span class="stack-tag java">Spring Boot</span>
+        <span class="stack-tag eng">Microservices</span>
+        <span class="stack-tag eng">System Design</span>
+        <span class="stack-tag eng">DSA</span>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--text-tertiary);margin-top:12px;text-align:center;">&#8593; This is a software engineering stack with AI/ML capabilities &mdash; not a research toolkit. Focused on building practical AI-powered systems.</p>
+</section>
+
+<!-- ==================== ACHIEVEMENTS ==================== -->
+<section id="achievements">
+  <div class="section-label">/achievements</div>
+  <div class="achievement">
+    <div class="achievement-icon" style="color:var(--purple)">&#128200;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Amazon ML Challenge &mdash; Global Rank #127</div>
+      <div class="achievement-desc">Ranked 127th out of thousands of participants in Amazon's machine learning challenge. Demonstrates practical ML problem-solving ability.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127942;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Smart India Hackathon (SIH) 2025 &mdash; National Finalist</div>
+      <div class="achievement-desc">Selected for NTRO's offline multilingual intelligence problem. Competed among thousands of teams nationally.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#11088;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">CodeChef &mdash; 3 Star</div>
+      <div class="achievement-desc">Consistent competitive programming performance &mdash; algorithmic problem solving and data structures.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127891;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Super 30 Scholar &mdash; MIT Academy of Engineering</div>
+      <div class="achievement-desc">Selected among top 30 students for merit-based scholarship and faculty mentorship.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127942;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Atos Srijan Hackathon 2025 &mdash; Special Recognition</div>
+      <div class="achievement-desc">Industry hackathon recognition for innovative solution design.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EDUCATION ==================== -->
+<section id="education">
+  <div class="section-label">/education</div>
+  <div class="edu-item">
+    <h3>B.Tech in Computer Engineering</h3>
+    <div class="edu-meta">MIT Academy of Engineering, Pune &middot; 2023 &ndash; 2027</div>
+    <div class="edu-detail">CGPA: 8.18 / 10</div>
+    <div class="edu-coursework"><strong>Relevant Coursework:</strong>
+      <span class="course-tag" style="color:var(--purple);border-color:var(--purple-border);background:var(--purple-bg)">Machine Learning</span>
+      <span class="course-tag">Data Structures &amp; Algorithms</span>
+      <span class="course-tag">Database Management Systems</span>
+      <span class="course-tag">Object-Oriented Programming</span>
+      <span class="course-tag">Operating Systems</span>
+      <span class="course-tag">Computer Networks</span>
+      <span class="course-tag">Software Engineering</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact">
+  <div class="section-label">/contact</div>
+  <div class="contact-links">
+    <a href="https://github.com/Sahas2711" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub/Sahas2711</a>
+    <a href="https://www.linkedin.com/in/sahas-nagar/" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn/in/sahas-nagar</a>
+    <a href="mailto:sahas.p.nagar@gmail.com"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> sahas.p.nagar@gmail.com</a>
+    <a href="https://drive.google.com/file/d/1AoPmQkw7I-EyDdEucngC3wJ_vJOyz-yv/view?usp=drive_link" target="_blank"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Resume (PDF)</a>
+  </div>
+</section>
+
+</main>
+<footer>Sahas Nagar &middot; AI/ML Engineer &middot; 2025 &mdash; Software engineer with practical AI/ML experience</footer>
+<script>
+  // Theme toggle
+  const themeBtn = document.getElementById('themeToggle');
+  function toggleTheme() {
+    const e = document.documentElement;
+    e.classList.toggle('light');
+    localStorage.setItem('theme', e.classList.contains('light') ? 'light' : 'dark');
+  }
+  if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
+  themeBtn.addEventListener('click', toggleTheme);
+
+  // Mobile menu
+  document.getElementById('mobileToggle').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+
+  // Intersection observer for animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('animate');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('section, .project, .featured-rank, .why-grid, .stack-grid, .pipeline').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

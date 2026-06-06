@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahas Nagar — Cloud & DevOps Engineer | AWS, Docker, CI/CD, Infrastructure</title>
+  <meta name="description" content="Cloud & DevOps Engineer building cloud-native systems, automated deployments, containerized applications, and infrastructure automation using AWS, Docker, Linux, and CI/CD workflows. SIH 2025 Finalist. CCNA Trained. Red Hat Certified.">
+  <meta name="keywords" content="Sahas Nagar, Cloud Engineer, DevOps Engineer, AWS, Docker, CI/CD, Infrastructure, Cloud Infrastructure, Linux, Python, Boto3">
+  <meta name="author" content="Sahas Nagar">
+  <link rel="canonical" href="https://sahas2711.github.io/devops/">
+  <meta property="og:title" content="Sahas Nagar — Cloud & DevOps Engineer">
+  <meta property="og:description" content="Cloud & DevOps Engineer. AWS, Docker, CI/CD, Infrastructure Automation. SIH 2025 Finalist.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sahas2711.github.io/devops/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0a0b">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0b;
+      --bg-secondary: #121214;
+      --bg-tertiary: #1a1a1d;
+      --border: #2a2a2e;
+      --border-hover: #3a3a3e;
+      --text-primary: #f0f0f1;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #71717a;
+      --accent: #0ea5e9;
+      --accent-dim: #0284c7;
+      --accent-bg: rgba(14,165,233,0.08);
+      --accent-border: rgba(14,165,233,0.2);
+      --teal: #14b8a6;
+      --teal-bg: rgba(20,184,166,0.08);
+      --teal-border: rgba(20,184,166,0.2);
+      --green: #22c55e;
+      --green-bg: rgba(34,197,94,0.08);
+      --amber: #f59e0b;
+      --amber-bg: rgba(245,158,11,0.08);
+      --radius: 8px;
+      --radius-sm: 4px;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --max-width: 800px;
+    }
+    .light {
+      --bg-primary: #fff;
+      --bg-secondary: #fafafa;
+      --bg-tertiary: #f4f4f5;
+      --border: #e4e4e7;
+      --border-hover: #d4d4d8;
+      --text-primary: #18181b;
+      --text-secondary: #52525b;
+      --text-tertiary: #a1a1aa;
+      --accent: #0284c7;
+      --accent-bg: rgba(2,132,199,0.06);
+      --accent-border: rgba(2,132,199,0.12);
+      --teal-bg: rgba(20,184,166,0.06);
+      --teal-border: rgba(20,184,166,0.12);
+      --green-bg: rgba(34,197,94,0.06);
+      --amber-bg: rgba(245,158,11,0.06);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,11,0.85);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+    .light nav { background: rgba(255,255,255,0.85); }
+    .nav-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      height: 52px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-weight: 600; font-size: 14px; color: var(--text-primary); text-decoration: none; font-family: var(--font-mono); }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 12px; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links .theme-btn { background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 3px 8px; cursor: pointer; color: var(--text-secondary); font-size: 13px; transition: all 0.15s; line-height: 1; }
+    .nav-links .theme-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .nav-links .mobile-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 3px 7px; cursor: pointer; color: var(--text-secondary); font-size: 15px; }
+    .mobile-menu { display: none; padding: 10px 24px 14px; border-top: 1px solid var(--border); flex-direction: column; gap: 10px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text-secondary); text-decoration: none; font-size: 13px; font-weight: 500; }
+    .mobile-menu a:hover { color: var(--text-primary); }
+    main { max-width: var(--max-width); margin: 0 auto; padding: 72px 24px 32px; }
+    section { padding: 44px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    .section-label { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+
+    #hero { padding: 64px 0 40px; border-bottom: 1px solid var(--border); position: relative; }
+    #hero::before { content: ''; position: absolute; top: -60px; right: -80px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(14,165,233,0.06) 0%, transparent 70%); pointer-events: none; }
+    .hero-content { max-width: 680px; }
+    .hero-badge { display: inline-block; font-family: var(--font-mono); font-size: 10px; background: var(--accent); color: white; padding: 3px 10px; border-radius: var(--radius-sm); margin-bottom: 12px; }
+    .hero-name { font-size: 34px; font-weight: 700; line-height: 1.15; margin-bottom: 6px; letter-spacing: -0.02em; }
+    .hero-name .gradient { background: linear-gradient(135deg, #0ea5e9, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-title { font-size: 16px; color: var(--text-secondary); margin-bottom: 4px; font-weight: 400; }
+    .hero-tagline { font-size: 14px; color: var(--text-tertiary); line-height: 1.7; margin: 10px 0 18px; }
+    .hero-stats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .hero-stat { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: var(--radius-sm); font-size: 11px; font-family: var(--font-mono); background: var(--accent-bg); border: 1px solid var(--accent-border); color: var(--accent); }
+    .hero-stat strong { font-weight: 600; color: var(--text-primary); }
+    .hero-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px;
+      border-radius: var(--radius); font-size: 12px; font-weight: 500;
+      text-decoration: none; transition: all 0.15s;
+      border: 1px solid var(--border); color: var(--text-secondary); background: var(--bg-secondary);
+    }
+    .hero-links a:hover { border-color: var(--border-hover); color: var(--text-primary); background: var(--bg-tertiary); }
+    .hero-links a.primary { background: linear-gradient(135deg, #0ea5e9, #14b8a6); color: white; border: none; }
+    .hero-links a.primary:hover { opacity: 0.9; }
+    .hero-links svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .why-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; text-align: center; }
+    .why-card.highlight { border-color: var(--accent-border); background: var(--accent-bg); }
+    .why-card .icon { font-size: 24px; margin-bottom: 8px; display: block; }
+    .why-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .why-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+    .project { margin-bottom: 28px; padding: 24px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); }
+    .project:last-child { margin-bottom: 0; }
+    .project-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .project-badge.flagship { background: var(--accent-bg); border: 1px solid var(--accent-border); color: var(--accent); }
+    .project-badge.major { background: var(--teal-bg); border: 1px solid var(--teal-border); color: var(--teal); }
+    .project-title { font-size: 18px; font-weight: 600; margin-bottom: 2px; }
+    .project-subtitle { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; }
+    .project-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .project-links { display: flex; gap: 6px; flex-shrink: 0; }
+    .project-links a {
+      display: inline-flex; align-items: center; gap: 3px; padding: 3px 8px;
+      border-radius: var(--radius-sm); font-size: 11px; font-weight: 500;
+      text-decoration: none; border: 1px solid var(--border);
+      color: var(--text-secondary); transition: all 0.15s;
+    }
+    .project-links a:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .project-links svg { width: 12px; height: 12px; }
+    .project-problem { font-size: 12px; color: var(--text-tertiary); margin-bottom: 12px; padding: 10px 14px; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 2px solid var(--accent); line-height: 1.6; }
+    .project-block { margin-bottom: 12px; }
+    .project-block:last-child { margin-bottom: 0; }
+    .project-block-title { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--accent); margin-bottom: 6px; font-weight: 500; }
+    .project-block-content { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+    .project-block-content li { list-style: none; padding-left: 0; margin-bottom: 3px; }
+    .project-block-content li::before { content: '\2192 '; color: var(--accent); }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 12px; }
+    .project-tech span { padding: 3px 8px; border-radius: var(--radius-sm); font-size: 10px; font-family: var(--font-mono); background: var(--bg-tertiary); border: 1px solid var(--border); color: var(--text-tertiary); }
+    .project-outcome { margin-top: 12px; padding: 10px 14px; background: var(--teal-bg); border: 1px solid var(--teal-border); border-radius: var(--radius-sm); font-size: 12px; color: var(--teal); }
+    .project-outcome strong { font-weight: 600; }
+
+    .arch-container { margin: 12px 0; width: 100%; }
+    .arch-placeholder {
+      width: 100%; min-height: 280px;
+      background: var(--bg-tertiary);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 40px 24px; gap: 8px;
+      transition: border-color 0.2s;
+    }
+    .arch-placeholder .arch-icon { font-size: 40px; opacity: 0.4; }
+    .arch-placeholder .arch-label { font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); }
+    .arch-placeholder .arch-hint { font-size: 11px; color: var(--text-tertiary); opacity: 0.6; }
+    .arch-caption { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-top: 10px; padding: 10px 14px; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 2px solid var(--teal); }
+    .arch-caption li { list-style: none; padding-left: 0; margin-bottom: 2px; }
+    .arch-caption li::before { content: '\2192 '; color: var(--teal); }
+
+    .timeline { position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; padding-left: 30px; padding-bottom: 24px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot { position: absolute; left: 3px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-primary); border: 2px solid var(--accent); }
+    .timeline-dot.current { background: var(--accent); border-color: var(--accent); }
+    .timeline-dot.infra { border-color: var(--teal); }
+    .timeline-dot.infra.current { background: var(--teal); border-color: var(--teal); }
+    .timeline-dot.network { border-color: var(--green); }
+    .timeline-header { margin-bottom: 4px; }
+    .timeline-company { font-size: 14px; font-weight: 600; }
+    .timeline-role { font-size: 12px; color: var(--text-secondary); }
+    .timeline-role .tag { display: inline-block; font-family: var(--font-mono); font-size: 9px; padding: 1px 6px; border-radius: var(--radius-sm); margin-left: 4px; vertical-align: middle; }
+    .timeline-role .tag.infra { background: var(--accent-bg); border: 1px solid var(--accent-border); color: var(--accent); }
+    .timeline-role .tag.deploy { background: var(--teal-bg); border: 1px solid var(--teal-border); color: var(--teal); }
+    .timeline-role .tag.net { background: var(--green-bg); border: 1px solid rgba(34,197,94,0.2); color: var(--green); }
+    .timeline-date { font-family: var(--font-mono); font-size: 10px; color: var(--text-tertiary); }
+    .timeline-details { margin-top: 4px; }
+    .timeline-details li { font-size: 12px; color: var(--text-secondary); margin-bottom: 2px; list-style: none; padding-left: 0; }
+    .timeline-details li::before { content: '\2014 '; color: var(--text-tertiary); }
+
+    .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cap-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .cap-card h4 { font-family: var(--font-mono); font-size: 11px; font-weight: 600; margin-bottom: 8px; color: var(--accent); }
+    .cap-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+    .skill-cat { margin-bottom: 14px; }
+    .skill-cat:last-child { margin-bottom: 0; }
+    .skill-cat-title { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 6px; font-weight: 500; }
+    .skill-cat-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .skill-tag { padding: 3px 10px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 500; background: var(--accent-bg); border: 1px solid var(--accent-border); color: var(--accent); }
+    .skill-tag.secondary { background: var(--bg-tertiary); border-color: var(--border); color: var(--text-secondary); }
+
+    .achievement { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .achievement:last-child { border-bottom: none; }
+    .achievement-icon { flex-shrink: 0; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+    .achievement-content { flex: 1; }
+    .achievement-title { font-size: 13px; font-weight: 500; }
+    .achievement-desc { font-size: 12px; color: var(--text-secondary); margin-top: 1px; }
+
+    .edu-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+    .edu-item h3 { font-size: 14px; font-weight: 600; }
+    .edu-meta { font-size: 12px; color: var(--text-secondary); }
+    .edu-detail { display: inline-block; padding: 2px 8px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 11px; color: var(--accent); margin-top: 6px; margin-right: 4px; }
+    .edu-coursework { font-size: 12px; color: var(--text-secondary); margin-top: 6px; }
+    .edu-coursework .course-tag { display: inline-block; padding: 1px 7px; background: var(--bg-tertiary); border-radius: var(--radius-sm); font-size: 11px; margin: 2px 2px 0 0; color: var(--text-secondary); }
+
+    #contact { padding: 32px 0; }
+    .contact-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .contact-links a {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 500; color: var(--text-secondary);
+      text-decoration: none; padding: 4px 0;
+      border-bottom: 1px solid transparent; transition: all 0.15s;
+    }
+    .contact-links a:hover { color: var(--text-primary); border-bottom-color: var(--accent); }
+    .contact-links svg { width: 14px; height: 14px; flex-shrink: 0; }
+    footer { text-align: center; padding: 20px; font-size: 11px; color: var(--text-tertiary); border-top: 1px solid var(--border); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .animate { animation: fadeUp 0.35s ease-out forwards; }
+
+    @media (max-width: 700px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .cap-grid { grid-template-columns: 1fr; }
+      main { padding: 64px 16px 24px; }
+      .nav-links a:not(.theme-btn) { display: none; }
+      .nav-links .mobile-toggle { display: block; }
+      section { padding: 28px 0; }
+      #hero { padding: 48px 0 24px; }
+      .hero-name { font-size: 26px; }
+      .project-header { flex-direction: column; align-items: flex-start; }
+      .project { padding: 16px; }
+      .arch-placeholder { min-height: 200px; padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/devops/" class="nav-logo"><span>~</span>/sahas</a>
+    <div class="nav-links">
+      <a href="#why">Why Cloud+DevOps</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+      <button class="theme-btn" id="themeToggle">&#9790;</button>
+      <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why">Why Cloud+DevOps</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Achievements</a>
+  </div>
+</nav>
+<main>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Cloud & DevOps Engineer</div>
+    <h1 class="hero-name">Building <span class="gradient">Cloud Infrastructure</span><br>with Automation & Reliability</h1>
+    <p class="hero-title">Sahas Nagar &middot; AWS, Docker, Linux, CI/CD</p>
+    <p class="hero-tagline">Building cloud-native systems, automated deployments, containerized applications, and infrastructure automation using AWS, Docker, Linux, and CI/CD workflows.</p>
+    <div class="hero-stats">
+      <span class="hero-stat"><strong>AWS</strong> EC2 &middot; S3 &middot; IAM &middot; CloudFront &middot; Athena</span>
+      <span class="hero-stat"><strong>Docker</strong> Deployments</span>
+      <span class="hero-stat"><strong>SIH 2025</strong> National Finalist</span>
+      <span class="hero-stat"><strong>CCNA</strong> Trained</span>
+      <span class="hero-stat"><strong>Red Hat</strong> Certified</span>
+    </div>
+    <div class="hero-links">
+      <a href="https://drive.google.com/file/d/1rYccDF3XpImMtRtMkT9ik0M2dWwawj3u/view?usp=sharing" class="primary" target="_blank">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Resume
+      </a>
+      <a href="https://github.com/Sahas2711" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/sahas-nagar/" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-label">/why-cloud-devops</div>
+  <div class="why-grid">
+    <div class="why-card highlight">
+      <span class="icon">&#9881;&#65039;</span>
+      <h4>Infrastructure Automation</h4>
+      <p>Automating AWS resource provisioning and operational workflows using Python and Boto3.</p>
+    </div>
+    <div class="why-card">
+      <span class="icon">&#128268;</span>
+      <h4>Containerized Deployments</h4>
+      <p>Deploying applications consistently across environments using Docker and container orchestration.</p>
+    </div>
+    <div class="why-card">
+      <span class="icon">&#9729;&#65039;</span>
+      <h4>Production Delivery</h4>
+      <p>Deploying and maintaining cloud-hosted applications with secure configurations and CI workflows.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">/projects</div>
+
+  <div class="project">
+    <div class="project-badge flagship">&#9733; Flagship &mdash; Infrastructure Automation</div>
+    <div class="project-title">AWS SDK Automation CLI</div>
+    <div class="project-subtitle">Python &middot; Boto3 &middot; AWS (EC2, S3, IAM, CloudFront, Athena)</div>
+
+    <div class="project-problem"><strong>Problem:</strong> Provisioning AWS resources manually through the console is repetitive, error-prone, and difficult to scale. Infrastructure teams need programmatic, repeatable workflows for cloud resource management.</div>
+<div class="arch-container">
+  <img
+    src="image_1.jpeg"
+    alt="AWS SDK Automation Architecture"
+    style="
+      width:100%;
+      display:block;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:var(--bg-secondary);
+    "
+  />
+</div>
+
+    <div class="project-block">
+      <div class="project-block-title">Architecture & Implementation</div>
+      <div class="arch-caption">
+        <li><strong>Resource provisioning:</strong> Automated EC2 instance creation with configurable AMI, instance type, and security group parameters via Python CLI</li>
+        <li><strong>IAM integration:</strong> Programmatic IAM role and policy management with least-privilege principles &mdash; automated user creation, policy attachment, and access key rotation</li>
+        <li><strong>AWS SDK workflows:</strong> S3 bucket operations (create, list, sync) and CloudFront distribution management through Boto3 SDK</li>
+        <li><strong>Infrastructure automation:</strong> Athena query execution for log analysis and S3 data inspection &mdash; all triggered from a unified CLI interface</li>
+      </div>
+    </div>
+
+    <div class="project-tech"><span>Python</span><span>Boto3</span><span>AWS</span><span>IAM</span><span>EC2</span><span>S3</span><span>CloudFront</span><span>Athena</span></div>
+    <div class="project-outcome"><strong>Outcome:</strong> Python-based CLI tool automating EC2 provisioning, S3 operations, IAM management, CloudFront distribution, and Athena queries &mdash; replacing manual AWS console workflows with repeatable automation.</div>
+    <div style="margin-top:8px;">
+      <a href="https://github.com/Sahas2711/AWS-SDK_Automation" target="_blank" style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-family:var(--font-mono);color:var(--accent);text-decoration:none;border:1px solid var(--accent-border);padding:3px 8px;border-radius:var(--radius-sm);background:var(--accent-bg);">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="12" height="12"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-badge major">Containerized Deployment</div>
+    <div class="project-title">Containerized Microservices Deployment Platform</div>
+    <div class="project-subtitle">Docker &middot; Spring Boot &middot; Spring Cloud &middot; Vercel &middot; Neon</div>
+
+    <div class="project-problem"><strong>Problem:</strong> Managing multiple services independently creates deployment and maintenance challenges. Without containerization, environment inconsistencies and deployment failures become common across development, staging, and production.</div>
+
+    <div class="arch-container">
+      <img
+        src="image_2.jpeg"
+        alt="Containerized Microservices Deployment"
+        style="
+          width:100%;
+          display:block;
+          border-radius:12px;
+          border:1px solid var(--border);
+          background:var(--bg-secondary);
+        "
+      />
+    </div>
+
+    <div class="project-block">
+      <div class="project-block-title">Architecture & Implementation</div>
+      <div class="arch-caption">
+        <li><strong>Containerized services:</strong> Docker Compose orchestration for 3 independent microservices (User, Task, Auth) with per-service containers and isolated networking</li>
+        <li><strong>API gateway layer:</strong> Spring Cloud Gateway handles centralized routing, request filtering, and load distribution across containerized backend services</li>
+        <li><strong>Independent deployments:</strong> Each microservice deployable independently &mdash; enabling zero-downtime updates and isolated debugging without affecting other services</li>
+        <li><strong>Infrastructure considerations:</strong> Environment configuration management, container networking, volume mounting for persistent data, and multi-stage Docker builds for optimized images</li>
+      </div>
+    </div>
+
+    <div class="project-tech"><span>Docker</span><span>Docker Compose</span><span>Spring Boot 3</span><span>Spring Cloud Gateway</span><span>Vercel</span><span>Neon</span><span>MySQL</span></div>
+    <div class="project-outcome"><strong>Outcome:</strong> Three-container microservices deployment with Docker Compose orchestration, demonstrating service isolation, independent deployability, and consistent multi-environment infrastructure.</div>
+    <div style="margin-top:8px;">
+      <a href="https://github.com/Sahas2711/TaskSphere_d" target="_blank" style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-family:var(--font-mono);color:var(--accent);text-decoration:none;border:1px solid var(--accent-border);padding:3px 8px;border-radius:var(--radius-sm);background:var(--accent-bg);">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="12" height="12"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-badge major">Production Deployment</div>
+    <div class="project-title">Production Cloud Deployment Case Study</div>
+    <div class="project-subtitle">Render &middot; MySQL &middot; JWT &middot; Cloudinary &middot; Spring Boot</div>
+
+    <div class="project-problem"><strong>Problem:</strong> Deploying a full-stack application to production requires environment configuration, build pipeline setup, and ensuring service availability. This project demonstrates end-to-end deployment of a production cloud application.</div>
+
+    <div class="arch-container">
+      <img
+        src="image_3.png"
+        alt="Production Cloud Deployment"
+        style="
+          width:100%;
+          display:block;
+          border-radius:12px;
+          border:1px solid var(--border);
+          background:var(--bg-secondary);
+        "
+      />
+    </div>
+
+    <div class="project-block">
+      <div class="project-block-title">Architecture & Implementation</div>
+      <div class="arch-caption">
+        <li><strong>Traffic flow:</strong> HTTPS requests routed through Render's managed infrastructure with automatic TLS termination and CDN edge caching for static assets</li>
+        <li><strong>Cloud hosting:</strong> Spring Boot application deployed on Render with managed MySQL database &mdash; automated health checks, auto-recovery, and zero-downtime deploys</li>
+        <li><strong>Infrastructure components:</strong> Cloudinary for media storage/CDN, environment-based configuration management, and Git-integrated deployment pipeline</li>
+        <li><strong>Deployment strategy:</strong> Branch-based preview environments on Render &mdash; staging and production isolated with automated build triggers from GitHub</li>
+      </div>
+    </div>
+
+    <div class="project-tech"><span>Render</span><span>MySQL</span><span>Spring Boot</span><span>Cloudinary</span><span>Git</span><span>GitHub Actions</span></div>
+    <div class="project-outcome"><strong>Outcome:</strong> Live production application at <a href="https://staynest-dep.onrender.com/" style="color:inherit;text-decoration:underline">staynest-dep.onrender.com</a> with automated CI/CD, managed database, CDN asset delivery, and secure HTTPS configuration.</div>
+    <div style="margin-top:8px;">
+      <a href="https://github.com/Sahas2711/StayNest_DEP" target="_blank" style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-family:var(--font-mono);color:var(--accent);text-decoration:none;border:1px solid var(--accent-border);padding:3px 8px;border-radius:var(--radius-sm);background:var(--accent-bg);">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="12" height="12"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">/experience</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot current infra"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">Glimora International</div>
+        <div class="timeline-role">Trainee AI Full Stack Developer <span class="tag infra">Docker</span> <span class="tag deploy">Deployment</span></div>
+        <div class="timeline-date">Apr 2026 &ndash; Present &middot; Hybrid</div>
+      </div>
+      <ul class="timeline-details">
+        <li>Containerized application components using Docker for consistent deployment across development, staging, and production environments</li>
+        <li>Collaborated on infrastructure setup and deployment environment configuration for AI-powered platform features</li>
+        <li>Contributed to deployment workflows ensuring reliable application delivery across environments</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">Campus Credentials</div>
+        <div class="timeline-role">Full Stack Developer Intern <span class="tag deploy">Render</span> <span class="tag deploy">Git</span></div>
+        <div class="timeline-date">Jun 2025 &ndash; Aug 2025 &middot; Remote</div>
+      </div>
+      <ul class="timeline-details">
+        <li>Deployed full-stack application on Render with automated Git-based deployment workflows and environment configuration management</li>
+        <li>Configured production environment variables, database connection strings, and build settings for reliable application hosting</li>
+        <li>Collaborated in a 4-member team using Git feature branching, pull requests, and code review workflows</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot network"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">Cisco Virtual Internship</div>
+        <div class="timeline-role">Networking Intern <span class="tag net">CCNA</span> <span class="tag net">Routing</span></div>
+        <div class="timeline-date">2025 &middot; Virtual</div>
+      </div>
+      <ul class="timeline-details">
+        <li>Configured VLANs for network segmentation and traffic isolation &mdash; foundational knowledge for VPC and subnet design in cloud environments</li>
+        <li>Implemented OSPF routing protocols for dynamic route advertisement and network convergence</li>
+        <li>Applied subnetting and IP addressing schemes &mdash; directly applicable to cloud VPC architecture, CIDR block planning, and network ACL configuration</li>
+      </ul>
+      <div style="margin-top:6px;padding:8px 12px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:var(--radius-sm);font-size:11px;color:var(--green);line-height:1.6;">
+        <strong>Why networking matters for cloud infrastructure:</strong> Every cloud resource lives on a network. Understanding VLANs, routing, and subnetting translates directly to designing VPC architectures, security group rules, NACLs, and hybrid cloud connectivity.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">/skills</div>
+
+  <div class="skill-cat">
+    <div class="skill-cat-title">Cloud</div>
+    <div class="skill-cat-tags">
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">EC2</span>
+      <span class="skill-tag">S3</span>
+      <span class="skill-tag">IAM</span>
+      <span class="skill-tag secondary">CloudFront</span>
+      <span class="skill-tag secondary">Athena</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-cat-title">Containers</div>
+    <div class="skill-cat-tags">
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">Docker Compose</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-cat-title">Automation</div>
+    <div class="skill-cat-tags">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Boto3</span>
+      <span class="skill-tag secondary">Shell Scripting</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-cat-title">CI/CD</div>
+    <div class="skill-cat-tags">
+      <span class="skill-tag">Git</span>
+      <span class="skill-tag secondary">GitHub Actions</span>
+      <span class="skill-tag secondary">Jenkins</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-cat-title">Operating Systems</div>
+    <div class="skill-cat-tags">
+      <span class="skill-tag">Linux</span>
+      <span class="skill-tag">Red Hat</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-cat-title">Networking</div>
+    <div class="skill-cat-tags">
+      <span class="skill-tag">CCNA</span>
+      <span class="skill-tag">VLANs</span>
+      <span class="skill-tag">OSPF</span>
+      <span class="skill-tag">Subnetting</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-cat-title">Monitoring</div>
+    <div class="skill-cat-tags">
+      <span class="skill-tag secondary">CloudWatch</span>
+      <span class="skill-tag secondary">Logging</span>
+      <span class="skill-tag secondary">Metrics</span>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="section-label">/capability-areas</div>
+  <div class="cap-grid">
+    <div class="cap-card">
+      <h4>Cloud Infrastructure</h4>
+      <p>Designing and managing cloud resources including VPC architectures, IAM policies, EC2 compute, and S3 storage with security and cost optimization considerations.</p>
+    </div>
+    <div class="cap-card">
+      <h4>Deployment Pipelines</h4>
+      <p>Building CI/CD workflows with Git, automated testing, container builds, and deployment automation for reliable and repeatable releases.</p>
+    </div>
+    <div class="cap-card">
+      <h4>Observability</h4>
+      <p>Implementing logging, metrics, and monitoring strategies to ensure system reliability, performance tracking, and incident response readiness.</p>
+    </div>
+    <div class="cap-card">
+      <h4>Networking</h4>
+      <p>Understanding of routing protocols, network segmentation, subnetting, and cloud networking concepts essential for designing secure and scalable infrastructure.</p>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="section-label">/achievements</div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127942;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Smart India Hackathon (SIH) 2025 &mdash; National Finalist</div>
+      <div class="achievement-desc">Selected for NTRO's offline multilingual intelligence problem. Competed among thousands of teams nationally.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127942;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Atos Srijan Hackathon 2025 &mdash; Special Recognition</div>
+      <div class="achievement-desc">Industry hackathon recognition for innovative solution design.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127891;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Super 30 Scholar &mdash; MIT Academy of Engineering</div>
+      <div class="achievement-desc">Selected among top 30 students for merit-based scholarship and faculty mentorship.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127891;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">CCNA Trained &mdash; Cisco Networking Fundamentals</div>
+      <div class="achievement-desc">Completed Cisco networking curriculum covering VLANs, OSPF, subnetting, and routing fundamentals.</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">&#127891;</div>
+    <div class="achievement-content">
+      <div class="achievement-title">Red Hat Certified &mdash; Linux Administration</div>
+      <div class="achievement-desc">Red Hat Linux certification demonstrating system administration and Linux operations competency.</div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-label">/education</div>
+  <div class="edu-item">
+    <h3>B.Tech in Computer Engineering</h3>
+    <div class="edu-meta">MIT Academy of Engineering, Pune &middot; 2023 &ndash; 2027</div>
+    <div class="edu-detail">CGPA: 8.18 / 10</div>
+    <div class="edu-coursework"><strong>Relevant Coursework:</strong>
+      <span class="course-tag" style="color:var(--accent);border-color:var(--accent-border);background:var(--accent-bg)">Computer Networks</span>
+      <span class="course-tag">Operating Systems</span>
+      <span class="course-tag">Data Structures &amp; Algorithms</span>
+      <span class="course-tag">Database Management Systems</span>
+      <span class="course-tag">Object-Oriented Programming</span>
+      <span class="course-tag">Software Engineering</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">/contact</div>
+  <div class="contact-links">
+    <a href="https://github.com/Sahas2711" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub/Sahas2711</a>
+    <a href="https://www.linkedin.com/in/sahas-nagar/" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn/in/sahas-nagar</a>
+    <a href="mailto:sahas.p.nagar@gmail.com"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> sahas.p.nagar@gmail.com</a>
+    <a href="https://drive.google.com/file/d/1rYccDF3XpImMtRtMkT9ik0M2dWwawj3u/view?usp=sharing" target="_blank"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Resume (PDF)</a>
+  </div>
+</section>
+
+</main>
+<footer>Sahas Nagar &middot; Cloud & DevOps Engineer &middot; 2025</footer>
+<script>
+  const themeBtn = document.getElementById('themeToggle');
+  function toggleTheme() { const e = document.documentElement; e.classList.toggle('light'); localStorage.setItem('theme', e.classList.contains('light') ? 'light' : 'dark'); }
+  if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
+  themeBtn.addEventListener('click', toggleTheme);
+  document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate'); observer.unobserve(e.target); } }); }, { threshold: 0.08 });
+  document.querySelectorAll('section, .project, .why-grid, .cap-grid').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
