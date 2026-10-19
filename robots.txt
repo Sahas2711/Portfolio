@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sahas2711.github.io/Portfolio/sitemap.xml
