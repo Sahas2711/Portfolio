@@ -34,11 +34,11 @@ window.PROJECTS = [
       "Mixed-format documents (PDF, DOCX, XLSX, scans) have to be read, sorted and forwarded to the right team by hand — slow, inconsistent, and impossible to audit at volume.",
     solution:
       "An extraction pipeline (PyPDF2, python-docx, openpyxl, OCR) feeds a trained Naive Bayes classifier that scores 12 departments with confidence and keyword evidence, extracts structured fields, generates department-specific summaries and highlighted copies, and routes results by email.",
-    stack: ["Python", "OCR", "NLP", "scikit-learn", "React", "MySQL", "n8n"],
+    stack: ["Python", "OCR", "NLP", "scikit-learn", "React"],
     repo: "https://github.com/Sahas2711/DocuMitra",
     demo: null,
     year: "2025 – 2026",
-    note: "Team project (6 members) — I led the automation and processing pipeline.",
+    note: "Team project — I worked on the automation and processing pipeline.",
   },
   {
     name: "StayNest",
@@ -57,7 +57,7 @@ window.PROJECTS = [
     repo2: "https://github.com/Sahas2711/StayNest_DEP",
     demo: null,
     year: "2025",
-    note: "Built during the Campus Credentials internship.",
+    note: "Built during a 2025 internship at Campus Credentials.",
   },
   {
     name: "MonArch",
@@ -100,15 +100,15 @@ window.PROJECTS = [
     cats: ["ai", "automation"],
     flagship: true,
     summary:
-      "Fully offline OCR + translation system for Nepali and Sinhala literature — PaddleOCR, NLLB-200 and FastText running locally behind a Flask API.",
+      "Fully offline OCR + translation system for Nepali and Sinhala literature — PaddleOCR, NLLB-200 and FastText running locally behind a Flask API, with a Streamlit front end.",
     problem:
       "Literature translation tools assume connectivity and cloud GPUs; heritage and low-connectivity contexts need everything to run on the reader's own machine.",
     solution:
-      "A Flask backend orchestrates PaddleOCR for text extraction, FastText for language detection, and NLLB-200 for offline translation, with local summarization. An Electron-wrapped React frontend consumes the API; models run fully on-device.",
-    stack: ["Python", "Flask", "PaddleOCR", "NLLB-200", "FastText"],
+      "A Flask backend orchestrates PaddleOCR for text extraction, FastText for language detection, and NLLB-200 for offline translation. A separate Streamlit front end calls the API; the models run on-device with no cloud inference.",
+    stack: ["Python", "Flask", "PaddleOCR", "NLLB-200", "FastText", "Streamlit"],
     repo: "https://github.com/Sahas2711/BhashaSetu",
     demo: null,
-    year: "2025",
+    year: "2026",
   },
 
   /* ---- Supporting projects ---- */
@@ -171,11 +171,12 @@ window.PROJECTS = [
     cats: ["ai"],
     flagship: false,
     summary:
-      "Email spam classifier — NLP preprocessing, TF-IDF features and Logistic Regression / Naive Bayes, deployed as a live Streamlit app.",
+      "Email spam classifier — NLP preprocessing, TF-IDF features and Logistic Regression / Naive Bayes, packaged as a Streamlit app.",
     stack: ["Python", "scikit-learn", "NLP", "Streamlit"],
     repo: "https://github.com/Sahas2711/SpamShield",
-    demo: "https://spamshield-project.streamlit.app/",
+    demo: null,
     year: "2026",
+    note: "The hosted Streamlit demo is sign-in gated; run it from the repository instead.",
   },
   {
     name: "TaskSphere",
@@ -210,7 +211,7 @@ window.PROJECTS = [
     cats: ["backend", "cloud"],
     flagship: false,
     summary:
-      "Redis caching layer in front of Django endpoints backed by AWS RDS, cutting repeated database reads on high-traffic routes.",
+      "Redis caching layer in front of Django endpoints backed by AWS RDS, so repeated reads are served from cache instead of the database.",
     stack: ["Python", "Django", "Redis", "AWS RDS"],
     repo: "https://github.com/Sahas2711/ecommerce-cache",
     demo: null,

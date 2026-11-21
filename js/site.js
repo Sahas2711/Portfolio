@@ -1,9 +1,10 @@
 /**
  * Site behaviour: theme, navigation, scroll reveal, project filtering,
- * GitHub panel, footer year, back-to-top.
+ * directory rendering, footer year, back-to-top.
  *
  * Progressive enhancement only — every page remains readable and
- * navigable with JavaScript disabled.
+ * navigable with JavaScript disabled. The open-source section is static
+ * markup (verified data), so there is no API call or loading state.
  */
 (function () {
   "use strict";
@@ -293,98 +294,6 @@
     a.textContent = "Live demo";
     a.setAttribute("aria-label", "Live demo (opens in new tab)");
     return a;
-  }
-
-  /* ------------------------------------------------------------------
-     GitHub open-source panel
-     ------------------------------------------------------------------ */
-  var ghPanel = document.querySelector("[data-github-panel]");
-  if (ghPanel) {
-    var list = ghPanel.querySelector("[data-repo-list]");
-    var status = ghPanel.querySelector("[data-gh-status]");
-    var statRepos = ghPanel.querySelector("[data-gh-repos]");
-    var statStars = ghPanel.querySelector("[data-gh-stars]");
-    var statLang = ghPanel.querySelector("[data-gh-langs]");
-
-    fetch("https://api.github.com/users/Sahas2711/repos?per_page=100&sort=pushed", {
-      headers: { Accept: "application/vnd.github+json" },
-    })
-      .then(function (res) {
-        if (!res.ok) throw new Error("status " + res.status);
-        return res.json();
-      })
-      .then(function (repos) {
-        var own = repos.filter(function (r) {
-          return !r.fork;
-        });
-        var stars = own.reduce(function (sum, r) {
-          return sum + r.stargazers_count;
-        }, 0);
-        var langs = {};
-        own.forEach(function (r) {
-          if (r.language) langs[r.language] = true;
-        });
-
-        if (statRepos) statRepos.textContent = String(own.length);
-        if (statStars) statStars.textContent = String(stars);
-        if (statLang) statLang.textContent = String(Object.keys(langs).length);
-
-        if (status) status.hidden = true;
-        var colors = {
-          JavaScript: "#f1e05a",
-          TypeScript: "#3178c6",
-          Python: "#3572A5",
-          Java: "#b07219",
-          HTML: "#e34c26",
-          CSS: "#563d7c",
-          "Jupyter Notebook": "#DA5B0B",
-          Go: "#00ADD8",
-          Rust: "#dea584",
-        };
-
-        own.slice(0, 6).forEach(function (r) {
-          var item = document.createElement("div");
-          item.className = "repo-item";
-
-          var nameA = document.createElement("a");
-          nameA.className = "repo-name";
-          nameA.href = r.html_url;
-          nameA.target = "_blank";
-          nameA.rel = "noopener noreferrer";
-          var dot = document.createElement("span");
-          dot.className = "lang-dot";
-          dot.style.background = colors[r.language] || "#8b8b8b";
-          dot.setAttribute("aria-hidden", "true");
-          nameA.appendChild(dot);
-          nameA.appendChild(document.createTextNode(r.name));
-
-          var meta = document.createElement("div");
-          meta.className = "repo-meta";
-          var langSpan = document.createElement("span");
-          langSpan.textContent = r.language || "—";
-          var starSpan = document.createElement("span");
-          starSpan.textContent = r.stargazers_count + " ★";
-          meta.appendChild(langSpan);
-          meta.appendChild(starSpan);
-
-          var desc = document.createElement("p");
-          desc.className = "repo-desc";
-          desc.textContent = r.description || "Public repository on GitHub.";
-
-          item.appendChild(nameA);
-          item.appendChild(meta);
-          item.appendChild(desc);
-          list.appendChild(item);
-        });
-      })
-      .catch(function () {
-        if (list) list.hidden = true;
-        if (status) {
-          status.hidden = false;
-          status.innerHTML =
-            'Live GitHub data is unavailable right now. Browse the full profile at <a href="https://github.com/Sahas2711" target="_blank" rel="noopener noreferrer">github.com/Sahas2711</a>.';
-        }
-      });
   }
 
   /* ------------------------------------------------------------------

@@ -108,7 +108,7 @@
   </div>
 </nav>
 
-<div class="mobile-panel" id="mobile-panel">
+<div class="mobile-panel" id="mobile-panel" aria-label="Mobile navigation">
   <a href="#about">About</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
@@ -636,7 +636,7 @@
             <p class="pcard-desc">
               A fully offline OCR and translation system for Nepali and Sinhala
               literature — PaddleOCR, NLLB-200 and FastText running locally behind a
-              Flask API.
+              Flask API, with a Streamlit front end.
             </p>
             <div class="pcard-stack">
               <span class="tag">Python</span>
@@ -656,7 +656,7 @@
             </div>
             <div class="case-block">
               <h5>Engineering</h5>
-              <p>A Flask backend orchestrates PaddleOCR for extraction, FastText for language detection and NLLB-200 for offline translation, with local summarization; an Electron-wrapped React frontend consumes the API and models run entirely on-device.</p>
+              <p>A Flask backend orchestrates PaddleOCR for extraction, FastText for language detection and NLLB-200 for offline translation; a separate Streamlit front end calls the API. Every model runs on-device — no cloud inference, no network dependency at run time.</p>
             </div>
           </div>
         </article>
@@ -808,33 +808,111 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">Open source</p>
-        <h2 class="section-title">Public GitHub activity</h2>
+        <h2 class="section-title">Open Source Contributions</h2>
         <p class="section-desc">
-          Recently updated non-fork repositories, loaded live from the GitHub API.
-          Forks and experiments are excluded from this list.
+          Engineering work in codebases I don't own: small, reviewable pull requests
+          — bug fixes, schema validation, tests and documentation — that maintainers
+          reviewed and merged.
         </p>
       </div>
 
-      <div class="gh-panel reveal" data-github-panel>
-        <div class="gh-stats">
-          <div class="gh-stat">
-            <div class="num" data-gh-repos>—</div>
-            <div class="label">Public repos (non-fork)</div>
-          </div>
-          <div class="gh-stat">
-            <div class="num" data-gh-stars>—</div>
-            <div class="label">Stars earned</div>
-          </div>
-          <div class="gh-stat">
-            <div class="num" data-gh-langs>—</div>
-            <div class="label">Languages in use</div>
-          </div>
+      <div class="oss-stats reveal-stagger">
+        <div class="oss-stat">
+          <div class="num">88</div>
+          <div class="label">Merged pull requests</div>
         </div>
-        <div class="repo-list" data-repo-list></div>
-        <p class="gh-status" data-gh-status>Loading repositories…</p>
+        <div class="oss-stat">
+          <div class="num">19</div>
+          <div class="label">Merged in repositories I don't own</div>
+        </div>
+        <div class="oss-stat">
+          <div class="num">14</div>
+          <div class="label">External repositories contributed to</div>
+        </div>
       </div>
 
-      <div class="reveal" style="margin-top: 20px;">
+      <ul class="oss-list reveal-stagger">
+        <li class="oss-item">
+          <div class="oss-item-head">
+            <a class="oss-repo" href="https://github.com/FasterXML/jackson-databind" target="_blank" rel="noopener noreferrer">FasterXML/jackson-databind</a>
+            <span class="badge badge--merged">Merged</span>
+          </div>
+          <p class="oss-pr-title">Fix EOF handling in array-shaped deserialization</p>
+          <p class="oss-meta">
+            <span>PR #6405</span>
+            <span>Nov 2026</span>
+            <a href="https://github.com/FasterXML/jackson-databind/pull/6405" target="_blank" rel="noopener noreferrer">View pull request</a>
+          </p>
+        </li>
+        <li class="oss-item">
+          <div class="oss-item-head">
+            <a class="oss-repo" href="https://github.com/IBM/cloud-pak-deployer" target="_blank" rel="noopener noreferrer">IBM/cloud-pak-deployer</a>
+            <span class="badge badge--merged">Merged</span>
+          </div>
+          <p class="oss-pr-title">Add a unified installation progress log</p>
+          <p class="oss-meta">
+            <span>PR #1206</span>
+            <span>Nov 2026</span>
+            <a href="https://github.com/IBM/cloud-pak-deployer/pull/1206" target="_blank" rel="noopener noreferrer">View pull request</a>
+          </p>
+        </li>
+        <li class="oss-item">
+          <div class="oss-item-head">
+            <a class="oss-repo" href="https://github.com/meshery/schemas" target="_blank" rel="noopener noreferrer">meshery/schemas</a>
+            <span class="badge badge--merged">Merged</span>
+          </div>
+          <p class="oss-pr-title">Require positive ContentItem row numbers in schema validation</p>
+          <p class="oss-meta">
+            <span>PR #1360</span>
+            <span>Nov 2026</span>
+            <a href="https://github.com/meshery/schemas/pull/1360" target="_blank" rel="noopener noreferrer">View pull request</a>
+          </p>
+        </li>
+        <li class="oss-item">
+          <div class="oss-item-head">
+            <a class="oss-repo" href="https://github.com/ALPSim/ALPS" target="_blank" rel="noopener noreferrer">ALPSim/ALPS</a>
+            <span class="badge badge--merged">Merged</span>
+          </div>
+          <p class="oss-pr-title">Address parameter-handling review items in the DMFT module</p>
+          <p class="oss-meta">
+            <span>PR #344</span>
+            <span>Nov 2026</span>
+            <a href="https://github.com/ALPSim/ALPS/pull/344" target="_blank" rel="noopener noreferrer">View pull request</a>
+          </p>
+        </li>
+        <li class="oss-item">
+          <div class="oss-item-head">
+            <a class="oss-repo" href="https://github.com/saadeghi/daisyui" target="_blank" rel="noopener noreferrer">saadeghi/daisyui</a>
+            <span class="badge badge--merged">Merged</span>
+          </div>
+          <p class="oss-pr-title">Fix OTP component centering</p>
+          <p class="oss-meta">
+            <span>PR #4781</span>
+            <span>Oct 2026</span>
+            <a href="https://github.com/saadeghi/daisyui/pull/4781" target="_blank" rel="noopener noreferrer">View pull request</a>
+          </p>
+        </li>
+        <li class="oss-item">
+          <div class="oss-item-head">
+            <a class="oss-repo" href="https://github.com/QuantEcon/QuantEcon.jl" target="_blank" rel="noopener noreferrer">QuantEcon/QuantEcon.jl</a>
+            <span class="badge badge--merged">Merged</span>
+          </div>
+          <p class="oss-pr-title">Remove the broken <code>ECDF</code> deprecation</p>
+          <p class="oss-meta">
+            <span>PR #414</span>
+            <span>Oct 2026</span>
+            <a href="https://github.com/QuantEcon/QuantEcon.jl/pull/414" target="_blank" rel="noopener noreferrer">View pull request</a>
+          </p>
+        </li>
+      </ul>
+
+      <p class="oss-note reveal">
+        Counted from the GitHub API on 22 November 2026; the 19 external merges span
+        14 repositories, including three pull requests in the OBLIQ-in organisation.
+        Open, unmerged proposals are not counted here.
+      </p>
+
+      <div class="reveal" style="margin-top: 22px;">
         <a class="btn btn--secondary" href="https://github.com/Sahas2711" target="_blank" rel="noopener noreferrer">
           View full GitHub profile
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>

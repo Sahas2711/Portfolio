@@ -390,14 +390,21 @@ ol {
   padding: 14px 24px 22px;
   transform: translateY(-8px);
   opacity: 0;
+  /* visibility (not just opacity) keeps closed links out of the tab order
+     and out of the accessibility tree */
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+  transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease),
+    visibility 0s linear var(--dur-2);
 }
 
 .mobile-panel.open {
   opacity: 1;
   transform: none;
+  visibility: visible;
   pointer-events: auto;
+  transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease),
+    visibility 0s;
 }
 
 .mobile-panel a {
@@ -540,6 +547,12 @@ ol {
   color: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 35%, transparent);
   background: var(--accent-soft);
+}
+
+.badge--merged {
+  color: var(--good);
+  border-color: color-mix(in srgb, var(--good) 35%, transparent);
+  background: var(--good-soft);
 }
 
 /* --------------------------------------------------------------------------
@@ -1279,113 +1292,117 @@ ol {
 }
 
 /* --------------------------------------------------------------------------
-   12. OPEN SOURCE / GITHUB
+   12. OPEN SOURCE
    -------------------------------------------------------------------------- */
-.gh-panel {
+.oss-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.oss-stat {
+  background: var(--surface);
+  padding: 18px 20px;
+}
+
+.oss-stat .num {
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.oss-stat .label {
+  font-size: 12.2px;
+  color: var(--ink-3);
+  margin-top: 1px;
+}
+
+.oss-list {
+  display: grid;
+  margin-top: 24px;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
   background: var(--surface);
   overflow: hidden;
 }
 
-.gh-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-bottom: 1px solid var(--line);
-}
-
-.gh-stat {
-  padding: 20px 22px;
-  border-right: 1px solid var(--line);
-}
-
-.gh-stat:last-child {
-  border-right: 0;
-}
-
-.gh-stat .num {
-  font-size: 1.35rem;
-  font-weight: 650;
-  letter-spacing: -0.02em;
-}
-
-.gh-stat .label {
-  font-size: 12.2px;
-  color: var(--ink-3);
-  margin-top: 1px;
-}
-
-.repo-list {
-  display: grid;
-}
-
-.repo-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 6px 18px;
-  align-items: center;
-  padding: 15px 22px;
+.oss-item {
+  padding: 14px 20px;
   border-bottom: 1px solid var(--line);
   transition: background var(--dur-1) var(--ease);
 }
 
-.repo-item:last-child {
+.oss-item:last-child {
   border-bottom: 0;
 }
 
-.repo-item:hover {
+.oss-item:hover {
   background: var(--card-hover);
 }
 
-.repo-name {
+.oss-item-head {
   display: flex;
   align-items: center;
-  gap: 9px;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 3px;
+}
+
+.oss-repo {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 12.6px;
   font-weight: 500;
-  color: var(--ink);
-}
-
-.repo-name:hover {
-  color: var(--accent);
-}
-
-.lang-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.repo-desc {
-  grid-column: 1 / -1;
-  font-size: 12.8px;
   color: var(--ink-2);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
-.repo-meta {
-  display: flex;
-  gap: 14px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-3);
-  white-space: nowrap;
-}
-
-.gh-status {
-  padding: 26px 22px;
-  font-size: 13.2px;
-  color: var(--ink-3);
-}
-
-.gh-status a {
+.oss-repo:hover {
   color: var(--accent);
+}
+
+.oss-pr-title {
+  font-size: 14.2px;
   font-weight: 550;
+  letter-spacing: -0.005em;
+}
+
+.oss-pr-title code {
+  font-family: var(--mono);
+  font-size: 12.6px;
+  background: var(--accent-soft);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.oss-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 11.2px;
+  color: var(--ink-3);
+}
+
+.oss-meta a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.oss-meta a:hover {
+  text-decoration: underline;
+}
+
+.oss-note {
+  margin-top: 14px;
+  font-size: 12.4px;
+  color: var(--ink-3);
+  max-width: 64ch;
 }
 
 /* --------------------------------------------------------------------------
@@ -1794,25 +1811,14 @@ ol {
     grid-template-columns: 1fr;
   }
 
-  .gh-stats {
+  .oss-stats {
     grid-template-columns: 1fr;
   }
 
-  .gh-stat {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .gh-stat:last-child {
-    border-bottom: 0;
-  }
-
-  .repo-item {
-    grid-template-columns: 1fr;
-  }
-
-  .repo-meta {
-    justify-content: flex-start;
+  .oss-item-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .toolbar {
